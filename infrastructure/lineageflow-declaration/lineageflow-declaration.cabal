@@ -1,0 +1,56 @@
+name:
+  lineageflow-declaration
+version:
+  0.1.0
+cabal-version:
+  >=1.10
+build-type:
+  Simple
+license:
+  GPL-3
+license-file:
+  LICENSE
+copyright:
+  2018 Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+synopsis:
+  Declaration of LineageFlow algorithms.
+description:
+  This package contains the types for the declaration of algorithms in
+  LineageFlow. More details in the README.
+author:
+  Juan Raphael Diaz Simões
+extra-source-files:
+  CHANGELOG.md
+
+source-repository head
+  type:
+    git
+  location:
+    https://github.com/guaraqe/lineageflow
+
+library
+  exposed-modules:
+    LineageFlow.Declaration
+  build-depends:
+    lineageflow-base,
+    base,
+    aeson,
+    lens,
+    text
+  default-language: Haskell2010
+  default-extensions:
+    DataKinds
+    DeriveGeneric
+    DeriveFunctor
+    DeriveFoldable
+    DeriveTraversable
+    OverloadedStrings
+    StrictData
+    TemplateHaskell
+  hs-source-dirs:
+    src
+  ghc-options:
+    -Wall
+    -O2

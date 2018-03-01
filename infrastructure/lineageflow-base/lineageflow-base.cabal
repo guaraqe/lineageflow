@@ -1,0 +1,66 @@
+name:
+  lineageflow-base
+version:
+  0.1.0
+cabal-version:
+  >=1.10
+build-type:
+  Simple
+license:
+  GPL-3
+license-file:
+  LICENSE
+copyright:
+  2018 Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+synopsis:
+  Base types for LineageFlow algorithm interfaces.
+description:
+  This package contains the base types defining parameters, measurements
+  and algorithms in LineageFlow. More details in the README.
+author:
+  Juan Raphael Diaz Simões
+extra-source-files:
+  CHANGELOG.md
+
+source-repository head
+  type:
+    git
+  location:
+    https://github.com/guaraqe/lineageflow
+
+library
+  exposed-modules:
+    LineageFlow.Base.AType
+    LineageFlow.Base.MType
+    LineageFlow.Base.PType
+    LineageFlow.Base.Card
+    LineageFlow.Base.Utils
+    LineageFlow.Base
+  other-modules:
+    LineageFlow.Base.Imports
+  build-depends:
+    base >=4.9 && <4.10,
+    aeson,
+    containers,
+    lens,
+    rank2classes,
+    text,
+    unordered-containers
+  default-language: Haskell2010
+  default-extensions:
+    DataKinds
+    DeriveGeneric
+    DeriveFunctor
+    DeriveFoldable
+    DeriveTraversable
+    GeneralizedNewtypeDeriving
+    OverloadedStrings
+    StrictData
+    TemplateHaskell
+  hs-source-dirs:
+    src
+  ghc-options:
+    -Wall
+    -O2
