@@ -1,0 +1,52 @@
+name:
+  lineageflow-io-cbor
+version:
+  0.1.0
+synopsis:
+  An IO method for LineageFlow implemented with CBOR files.
+description:
+  This package implements an IO method for measurements in LineageFlow using
+  CBOR files. More details in the README.
+license:
+  GPL-3
+license-file:
+  LICENSE
+declaration:
+  2018 Juan Raphael Diaz Simões
+author:
+  Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+category:
+  Numerical
+build-type:
+  Simple
+cabal-version:
+  >=1.10
+
+library
+
+  hs-source-dirs:
+    src
+
+  default-extensions:
+    NoImplicitPrelude
+    TypeOperators
+
+  exposed-modules:
+    LineageFlow.IO.CBOR
+    LineageFlow.IO.CBOR.Classes
+    LineageFlow.IO.CBOR.Implementation
+
+  ghc-options:
+    -O2
+    -Wall
+
+  build-depends:
+    lineageflow-prelude,
+    lineageflow-io,
+    base,
+    serialise
+
+  default-language:
+    Haskell2010
