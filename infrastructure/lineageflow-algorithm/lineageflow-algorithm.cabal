@@ -1,0 +1,73 @@
+name:
+  lineageflow-executable
+version:
+  0.1.0
+synopsis:
+  Algorithm interface generator for LineageFlow algorithms.
+description:
+  This package contains a generator for LineageFlow algorithm executables from
+  declarative interfaces. More details on the README.
+cabal-version:
+  >=1.10
+build-type:
+  Simple
+license:
+  GPL-3
+license-file:
+  LICENSE
+maintainer:
+  mail@guaraqe.gq
+copyright:
+  2018 Juan Raphael Diaz Simões
+author:
+  Juan Raphael Diaz Simões
+extra-source-files:
+  CHANGELOG.md
+
+library
+  exposed-modules:
+    LineageFlow.Algorithm
+    LineageFlow.Algorithm.Algorithm
+    LineageFlow.Algorithm.Help
+    LineageFlow.Algorithm.UI
+
+    LineageFlow.Algorithm.Classes
+    LineageFlow.Algorithm.Classes.P
+    LineageFlow.Algorithm.Classes.PD
+    LineageFlow.Algorithm.Classes.MD
+  other-modules:
+    LineageFlow.Algorithm.Imports
+  build-depends:
+      base
+    , lineageflow-types
+    , lineageflow-declaration
+    , lineageflow-io
+    , aeson
+    , async
+    , bytestring
+    , file-embed
+    , lens
+    , optparse-applicative
+    , template-haskell
+    , text
+    , yaml
+  hs-source-dirs: src
+  default-extensions:
+    ConstraintKinds
+    DataKinds
+    DefaultSignatures
+    DeriveGeneric
+    DeriveFunctor
+    DeriveFoldable
+    DeriveTraversable
+    FlexibleInstances
+    FlexibleContexts
+    KindSignatures
+    LambdaCase
+    MultiParamTypeClasses
+    OverloadedStrings
+    ScopedTypeVariables
+    TypeApplications
+    TypeOperators
+  ghc-options: -Wall -O2
+  default-language: Haskell2010
