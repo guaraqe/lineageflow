@@ -1,0 +1,55 @@
+name:
+  lineageflow-database
+version:
+  0.1.0
+cabal-version:
+  >=1.10
+build-type:
+  Simple
+license:
+  GPL-3
+license-file:
+  LICENSE
+copyright:
+  2018 Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+synopsis:
+  Database interface for LineageFlow.
+description:
+  This package defines the database interface for LineageFlow. More details in
+  the README.
+author:
+  Juan Raphael Diaz Simões
+extra-source-files:
+  CHANGELOG.md
+
+library
+  exposed-modules:
+    LineageFlow.Database
+
+  build-depends:
+    lineageflow-query,
+    base,
+    text
+
+  hs-source-dirs: src
+  default-extensions:
+    ConstraintKinds
+    DataKinds
+    DefaultSignatures
+    DeriveGeneric
+    DeriveFunctor
+    DeriveFoldable
+    DeriveTraversable
+    FlexibleInstances
+    FlexibleContexts
+    KindSignatures
+    LambdaCase
+    MultiParamTypeClasses
+    OverloadedStrings
+    ScopedTypeVariables
+    TypeApplications
+    TypeOperators
+  ghc-options: -Wall -O2
+  default-language: Haskell2010
