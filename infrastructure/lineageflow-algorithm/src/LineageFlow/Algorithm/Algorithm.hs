@@ -4,6 +4,7 @@ module LineageFlow.Algorithm.Algorithm
     Algorithm (..)
   , makeAlgorithm
   , runAlgorithm
+  , launchAlgorithm
   ) where
 
 import LineageFlow.IO
@@ -17,7 +18,13 @@ import LineageFlow.Algorithm.Classes.O
 
 import LineageFlow.Declaration
 
+import Data.Monoid
 import Data.Proxy
+import qualified Data.Text as Text
+import qualified Data.Yaml as Yaml
+
+import System.Process
+import System.IO.Temp
 
 data Algorithm p i o = Algorithm
   { algorithm_decl :: ADecl
@@ -58,3 +65,10 @@ runAlgorithm
     output = alg parameter input
 
   oPut iomethod (unConst out) output
+
+launchAlgorithm :: Text -> Text -> APath -> IO ProcessHandle
+launchAlgorithm exec comm apath = do
+  (file,_) <- openTempFile "/tmp" "apath.yaml"
+  Yaml.encodeFile file apath
+  spawnCommand $
+    Text.unpack exec <> " " <> Text.unpack comm <> " -q " <> file

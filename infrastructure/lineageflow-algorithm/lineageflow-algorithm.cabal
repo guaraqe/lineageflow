@@ -48,7 +48,9 @@ library
     , file-embed
     , lens
     , optparse-applicative
+    , process
     , template-haskell
+    , temporary
     , text
     , yaml
   hs-source-dirs: src

@@ -1,6 +1,7 @@
 { mkDerivation, aeson, async, base, bytestring, file-embed, lens
 , lineageflow-declaration, lineageflow-io, lineageflow-types
-, optparse-applicative, stdenv, template-haskell, text, yaml
+, optparse-applicative, process, stdenv, template-haskell
+, temporary, text, yaml
 }:
 mkDerivation {
   pname = "lineageflow-executable";
@@ -8,9 +9,9 @@ mkDerivation {
   src = ./.;
   libraryHaskellDepends = [
     aeson async base bytestring file-embed lens lineageflow-declaration
-    lineageflow-io lineageflow-types optparse-applicative
-    template-haskell text yaml
+    lineageflow-io lineageflow-types optparse-applicative process
+    template-haskell temporary text yaml
   ];
-  description = "Synopsis";
+  description = "Algorithm interface generator for LineageFlow algorithms";
   license = stdenv.lib.licenses.gpl3;
 }
