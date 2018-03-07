@@ -48,13 +48,13 @@ runAlgorithm ::
   (P p, I kg i, O kp o, PD p, MD i, MD o) =>
   IOMethod kg kp -> APath -> Algorithm p i o -> IO ()
 runAlgorithm
-  database
+  iomethod
   (AType par inp out)
   (Algorithm _ alg) = do
 
-  input <- iGet database (unConst inp)
+  input <- iGet iomethod (unConst inp)
   let
     parameter = pGet (unConst par)
     output = alg parameter input
 
-  oPut database (unConst out) output
+  oPut iomethod (unConst out) output

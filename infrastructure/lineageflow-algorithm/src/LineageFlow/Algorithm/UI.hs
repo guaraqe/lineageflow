@@ -30,7 +30,7 @@ import Data.Monoid
 --------------------------------------------------------------------------------
 
 data Args =
-  Meta !FilePath | Run !FilePath !FilePath
+  Meta !FilePath | Run !FilePath
 
 metaParser :: Parser Args
 metaParser = Meta
@@ -43,11 +43,6 @@ metaParser = Meta
 runParser :: Parser Args
 runParser = Run
      <$> strOption
-         ( long "database-path"
-        <> short 'd'
-        <> metavar "FILEPATH"
-        <> help "Path to the database." )
-     <*> strOption
          ( long "query-file"
         <> short 'q'
         <> help "Path to the algorithm query." )
@@ -64,17 +59,17 @@ programInputParser = helper <*> subparser
 
 runWith ::
   (P p, I kg i, O kp o, PD p, MD i, MD o) =>
-  (FilePath -> IOMethod kg kp) -> Args -> Algorithm p i o -> IO ()
+  IOMethod kg kp -> Args -> Algorithm p i o -> IO ()
 runWith _ (Meta templatePath) (Algorithm meta _) =
   withFile templatePath WriteMode $ \file ->
     ByteString.hPut file (Yaml.encode meta)
 
-runWith databaseIn (Run databasePath queryPath) algorithm = do
+runWith iomethod (Run queryPath) algorithm = do
   query <- Yaml.decodeFileEither queryPath >>= \case
     Left s -> error (displayException s)
     Right x -> return x
 
-  runAlgorithm (databaseIn databasePath) query algorithm
+  runAlgorithm iomethod query algorithm
 {-# INLINE runWith #-}
 
 --------------------------------------------------------------------------------
