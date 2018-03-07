@@ -4,7 +4,7 @@
 , temporary, text, yaml
 }:
 mkDerivation {
-  pname = "lineageflow-executable";
+  pname = "lineageflow-algorithm";
   version = "0.1.0";
   src = ./.;
   libraryHaskellDepends = [
