@@ -3,7 +3,10 @@ name:
 version:
   0.1.0
 synopsis:
-  A framework for lineages evolving on time
+  Manipulation of cell trackings
+description:
+  This package defines a type for cell tracking and contains algorithms for
+  their manipulation. More details in the README.
 license:
   GPL-3
 license-file:
