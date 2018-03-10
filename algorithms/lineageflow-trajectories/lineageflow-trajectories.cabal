@@ -1,0 +1,95 @@
+name:
+  lineageflow-trajectories
+version:
+  0.1.0
+synopsis:
+  Path integrals for LineageFlow.
+description:
+  This package implements path integrals for single cells and pairs of cells.
+  More details in the README.
+license:
+  AGPL-3
+author:
+  Juan Raphael Diaz Simões
+copyright:
+  2018 Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+build-type:
+  Simple
+cabal-version:
+  >=1.10
+
+executable lf-trajectories
+
+  main-is:
+    Main.hs
+
+  other-modules:
+    ScalarPairPathIntegral
+    VectorPairPathIntegral
+
+  build-depends:
+    base >=4.9 && <4.10,
+    lineageflow-prelude,
+    lineageflow-algorithm,
+    lineageflow-io-cbor,
+    deepseq,
+    lens
+
+  hs-source-dirs:
+    app,
+    src
+
+  default-extensions:
+    NoImplicitPrelude
+    MultiParamTypeClasses
+    DeriveGeneric
+    OverloadedStrings
+    StrictData
+    ConstraintKinds
+    TypeOperators
+    DataKinds
+    LambdaCase
+    TemplateHaskell
+
+  ghc-options:
+    -O2
+    -threaded
+    -Wall
+    -fno-warn-unused-top-binds
+    -fno-warn-missing-signatures
+    -fno-warn-unticked-promoted-constructors
+    -fno-warn-incomplete-patterns
+
+  default-language:
+    Haskell2010
+
+library
+
+  exposed-modules:
+    LineageFlow.Trajectories.Types
+    LineageFlow.Trajectories.Lineage
+    LineageFlow.Trajectories.PathSpace
+    LineageFlow.Trajectories.Expectation
+    LineageFlow.Trajectories.PathIntegral
+
+  build-depends:
+    base >=4.9 && <4.10,
+    lineageflow-prelude,
+    deepseq,
+    lens
+
+  hs-source-dirs:
+    src
+
+  default-extensions:
+    NoImplicitPrelude
+    TypeOperators
+
+  ghc-options:
+    -O2
+    -Wall
+
+  default-language:
+    Haskell2010
