@@ -1,0 +1,93 @@
+name:
+  lineageflow-clustering
+version:
+  0.1.0
+synopsis:
+  Clustering of cell trajectories for LineageFlow.
+description:
+  This package includes functions for the generation and manipilations of cell
+  clusters. More details in the README.
+license:
+  AGPL-3
+author:
+  Juan Raphael Diaz Simões
+copyright:
+  2018 Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+build-type:
+  Simple
+cabal-version:
+  >= 1.10
+
+library
+  exposed-modules:
+    LineageFlow.Clustering.Similarity
+    LineageFlow.Clustering.Mixing
+    LineageFlow.Clustering.Eigenvectors
+    LineageFlow.Clustering.Clusters
+  build-depends:
+    lineageflow-prelude,
+    lineageflow-statistics,
+    base,
+    harpack,
+    clustering,
+    matrices
+  hs-source-dirs:
+    src
+  default-extensions:
+    NoImplicitPrelude
+    TypeOperators
+  ghc-options:
+    -O2
+    -Wall
+  default-language:
+    Haskell2010
+
+executable lf-clustering
+  main-is:
+    Main.hs
+  hs-source-dirs:
+    src,
+    app
+  default-extensions:
+    NoImplicitPrelude
+    TypeOperators
+    MultiParamTypeClasses
+    DeriveGeneric
+    DeriveAnyClass
+    OverloadedStrings
+    StrictData
+    ConstraintKinds
+    DataKinds
+    LambdaCase
+    TemplateHaskell
+  ghc-options:
+    -O2
+    -Wall
+    -fno-warn-unused-top-binds
+    -fno-warn-missing-signatures
+    -fno-warn-unticked-promoted-constructors
+    -fno-warn-incomplete-patterns
+    -threaded
+  build-depends:
+    lineageflow-prelude,
+    lineageflow-statistics,
+    base,
+    harpack,
+    clustering,
+    matrices,
+    lineageflow-io-cbor,
+    lineageflow-algorithm,
+    lineageflow-clustering
+  other-modules:
+    LineageFlow.Clustering.Clusters
+    LineageFlow.Clustering.Eigenvectors
+    LineageFlow.Clustering.Mixing
+    LineageFlow.Clustering.Similarity
+    Clusters
+    LiftClusters
+    Mixing
+    Similarity
+  default-language:
+    Haskell2010
