@@ -45,6 +45,10 @@ executable lf-tracking
   main-is:
     Main.hs
 
+  other-modules:
+    Tracking
+    Restrict
+
   ghc-options:
     -O
     -Wall
