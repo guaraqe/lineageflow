@@ -1,0 +1,50 @@
+name:
+  lineageflow-statistics
+version:
+  0.1.0
+synopsis:
+  Statistics for LineageFlow.
+description:
+  This package implements many global statistics on spatio-temporal lineages.
+  More details in the README.
+license:
+  AGPL-3
+author:
+  Juan Raphael Diaz Simões
+copyright:
+  2018 Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+build-type:
+  Simple
+cabal-version:
+  >=1.10
+
+library
+
+  exposed-modules:
+    LineageFlow.Statistics
+    LineageFlow.Statistics.Filter
+    LineageFlow.Statistics.Histogram
+    LineageFlow.Statistics.Regression
+    LineageFlow.Statistics.Sample
+
+  build-depends:
+    base >= 4.9 && <4.10,
+    lineageflow-prelude,
+    lens,
+    statistics
+
+  hs-source-dirs:
+    src
+
+  default-extensions:
+    NoImplicitPrelude
+    TypeOperators
+
+  ghc-options:
+    -O2
+    -Wall
+
+  default-language:
+    Haskell2010
