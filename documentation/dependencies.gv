@@ -1,0 +1,32 @@
+digraph lineageflow{
+  "base" -> "query";
+  "base" -> "declaration";
+
+  "types" -> "prelude";
+  "prelude" -> "io-*";
+  "prelude" -> "libraries";
+
+  "types" -> "algorithm";
+  "declaration" -> "algorithm";
+  "io" -> "algorithm";
+
+  "query" -> "database";
+
+  "query" -> "server-api";
+  "declaration" -> "server-api";
+
+  "algorithm" -> "server";
+  "server-api" -> "server";
+  "database-*" -> "server";
+
+  "server-api" -> "client";
+
+  "io" -> "io-*";
+
+  "database" -> "database-*";
+
+  "algorithm" -> "executables";
+  "io-*" -> "executables";
+  "libraries" -> "executables";
+
+}
