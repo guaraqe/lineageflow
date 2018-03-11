@@ -1,0 +1,81 @@
+name:
+  lineageflow-viewer
+version:
+  0.1.0
+synopsis:
+  Visualisation of measurements for LineageFlow.
+description:
+  An executable for the visualization of measurements over temporal lineages.
+  More details in the README.
+license:
+  AGPL-3
+copyright:
+  2018 Juan Raphael Diaz Simões
+author:
+  Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+build-type:
+  Simple
+cabal-version:
+  >=1.10
+data-files:
+  attach/FreeSans.ttf
+extra-source-files:
+  attach/FreeSans.ttf
+
+executable lf-viewer
+
+  hs-source-dirs:
+    app
+
+  main-is:
+    Main.hs
+
+  other-modules:
+    LineageFlow.Viewer.Input
+    LineageFlow.Viewer.Display
+    LineageFlow.Viewer.Widgets
+    LineageFlow.Viewer.Tensor
+    Paths_lineageflow_viewer
+
+  default-extensions:
+    NoImplicitPrelude
+
+  ghc-options:
+    -O2
+
+  build-depends:
+    base >=4.9 && <4.10,
+    lineageflow-prelude,
+    lineageflow-algorithm,
+    lineageflow-triangulations,
+    lineageflow-statistics,
+    lineageflow-io-cbor,
+    lineageflow-viewer-interface,
+    containers,
+    gtk,
+    gtkglext,
+    FTGL,
+    lens,
+    optparse-applicative,
+    OpenGL,
+    scientific,
+    statistics,
+    inline-c,
+    text,
+    yaml
+
+  default-language:
+    Haskell2010
+  c-sources:
+    cbits/dsyevh3.c
+    cbits/dsyevh3.h
+    cbits/dsyevc3.c
+    cbits/dsyevc3.h
+    cbits/dsyevq3.c
+    cbits/dsyevq3.h
+    cbits/dsytrd3.c
+    cbits/dsytrd3.h
+    app/LineageFlow/Viewer/Tensor.c
+  cc-options: -O3
