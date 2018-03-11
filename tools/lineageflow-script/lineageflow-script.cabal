@@ -1,0 +1,61 @@
+name:
+  lineageflow-script
+version:
+  0.1.0
+synopsis:
+  Script definitions for LineageFlow.
+description:
+  This package defines scripts for LineageFlow and implements their execution.
+  More details in the README.
+cabal-version:
+  >=1.10
+build-type:
+  Simple
+license:
+  AGPL-3
+license-file:
+  LICENSE
+copyright:
+  2018 Juan Raphael Diaz Simões
+author:
+  Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+extra-source-files:
+  CHANGELOG.md
+
+library
+  exposed-modules:
+    LineageFlow.Script
+    LineageFlow.Script.Entry
+    LineageFlow.Script.Var
+    LineageFlow.Script.Env
+    LineageFlow.Script.Query
+    LineageFlow.Script.Part
+    LineageFlow.Script.Step
+    LineageFlow.Script.Input
+    LineageFlow.Script.Run
+  build-depends:
+    base,
+    lineageflow-declaration,
+    lineageflow-query,
+    aeson,
+    containers,
+    lens,
+    rank2classes,
+    text
+  default-language: Haskell2010
+  default-extensions:
+    DataKinds
+    DeriveGeneric
+    DeriveFunctor
+    DeriveFoldable
+    DeriveTraversable
+    OverloadedStrings
+    StrictData
+    TemplateHaskell
+  hs-source-dirs:
+    src
+  ghc-options:
+    -Wall
+    -O2
