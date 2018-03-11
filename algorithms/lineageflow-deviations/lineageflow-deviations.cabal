@@ -1,0 +1,95 @@
+name:
+  lineageflow-deviations
+version:
+  0.1.0
+synopsis:
+  Deviations of neighboring cell trajectories.
+description:
+  This package calculates deviation of neighboring cells following different
+  criteria. More details in the README.
+license:
+  AGPL-3
+license-file:
+  LICENSE
+copyright:
+  2018 Juan Raphael Diaz Simões
+author:
+  Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+build-type:
+  Simple
+cabal-version:
+  >= 1.10
+
+library
+  exposed-modules:
+    LineageFlow.Deviations.Algorithm
+    LineageFlow.Deviations.Trajectory
+    LineageFlow.Deviations.Neighbors
+    LineageFlow.Deviations.Utils
+  ghc-options:
+    -O2
+    -Wall
+  build-depends:
+    lineageflow-prelude,
+    lineageflow-derivatives,
+    lineageflow-statistics,
+    base,
+    containers,
+    lens,
+    statistics,
+    storable-record,
+    these
+  default-extensions:
+    NoImplicitPrelude
+    TypeOperators
+  hs-source-dirs:
+    src
+  default-language:
+    Haskell2010
+
+executable lf-deviations
+  main-is:
+    Main.hs
+  hs-source-dirs:
+    src,
+    app
+  default-extensions:
+    NoImplicitPrelude
+    TypeOperators
+    MultiParamTypeClasses
+    DeriveGeneric
+    OverloadedStrings
+    StrictData
+    ConstraintKinds
+    DataKinds
+    LambdaCase
+    TemplateHaskell
+  ghc-options:
+    -O2
+    -Wall
+    -fno-warn-unused-top-binds
+    -fno-warn-missing-signatures
+    -fno-warn-unticked-promoted-constructors
+    -fno-warn-incomplete-patterns
+    -threaded
+  build-depends:
+    lineageflow-prelude,
+    lineageflow-algorithm,
+    lineageflow-io-cbor,
+    lineageflow-deviations,
+    lineageflow-derivatives,
+    lineageflow-statistics,
+    base,
+    containers,
+    lens,
+    statistics,
+    storable-record,
+    these
+  other-modules:
+    AllNeighbors
+    BornNeighbors
+    Sisters
+  default-language:
+    Haskell2010
