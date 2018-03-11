@@ -1,0 +1,111 @@
+name:
+  lineageflow-plot
+version:
+  0.1.0
+synopsis:
+  Plotting for LineageFlow.
+description:
+  This package has utilities for plotting statistics of measurements on
+  LineageFlow. More details in the README.
+license:
+  AGPL-3
+license-file:
+  LICENSE
+author:
+  Juan Raphael Diaz Simões
+copyright:
+  2018 Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+build-type:
+  Simple
+cabal-version:
+  >=1.10
+
+executable lf-plot
+
+  hs-source-dirs:
+    app,
+    src
+
+  main-is:
+    Main.hs
+
+  default-extensions:
+    NoImplicitPrelude
+
+  ghc-options:
+    -O2
+    -Wall
+    -fno-warn-missing-signatures
+
+  build-depends:
+    lineageflow-prelude,
+    lineageflow-statistics,
+    lineageflow-io-cbor,
+    lineageflow-plot-interface,
+    lineageflow-plot,
+    base,
+    aeson,
+    yaml,
+    bytestring,
+    Chart,
+    Chart-cairo,
+    colour,
+    data-default-class,
+    filepath,
+    foldl,
+    directory,
+    lens,
+    process,
+    temporary,
+    optparse-applicative,
+    statistics,
+    vector
+
+  default-language:
+    Haskell2010
+
+library
+
+  hs-source-dirs:
+    src
+
+  default-extensions:
+    NoImplicitPrelude
+
+  exposed-modules:
+    LineageFlow.Plot
+    LineageFlow.Plot.Types
+    LineageFlow.Plot.Utils
+    LineageFlow.Plot.Lines
+    LineageFlow.Plot.Points
+    LineageFlow.Plot.Histogram
+    LineageFlow.Plot.Style
+    LineageFlow.Plot.Render
+
+  ghc-options:
+    -O2
+    -Wall
+    -fno-warn-missing-signatures
+
+  build-depends:
+    lineageflow-prelude,
+    lineageflow-statistics,
+    lineageflow-plot-interface,
+    base,
+    Chart,
+    Chart-cairo,
+    colour,
+    data-default-class,
+    filepath,
+    foldl,
+    directory,
+    process,
+    temporary,
+    statistics,
+    lens,
+    vector
+
+  default-language:
+    Haskell2010
