@@ -57,7 +57,8 @@ The following tools are also included in the suite:
 - [`export`](tools/lineageflow-export): exporting cell selections to other file formats;
 - [`viewer`](tools/lineageflow-viewer): visualization of measurements in 3D+time;
 - [`plot`](tools/lineageflow-plot): plot generation for standard statistics on measurements;
-- [`playground`](tools/lineageflow-playground): utilities for interactive calculation on GHCi.
+- [`playground`](tools/lineageflow-playground): utilities for interactive calculation on GHCi;
+- [`script`](tools/lineageflow-script): scripts for the automation of multi-step algorithms;
 
 with the following interface packages:
 
@@ -66,6 +67,6 @@ with the following interface packages:
 
 # Acknowledgements
 
-This project has been developed by Juan Raphael Diaz Simões during a PhD thesis, in collaboration between the [Condensed Matter Physics Laboratory](https://pmc.polytechnique.fr/) at [École Polytechnique](http://www.polytechnique.edu/) and [CNRS](http://www.dr4.cnrs.fr/), and the [BioEmergences Laboratory](http://bioemergences.eu/bioemergences/index.php) at [CNRS](http://www.dr4.cnrs.fr/).
+This project has been developed by [Juan Raphael Diaz Simões](http://www.guaraqe.gq) during a PhD thesis, in collaboration between the [Condensed Matter Physics Laboratory](https://pmc.polytechnique.fr/) at [École Polytechnique](http://www.polytechnique.edu/) and [CNRS](http://www.dr4.cnrs.fr/), and the [BioEmergences Laboratory](http://bioemergences.eu/bioemergences/index.php) at [CNRS](http://www.dr4.cnrs.fr/).
 
 The project has been directed by [Denis Grebenkov](https://pmc.polytechnique.fr/pagesperso/dg/), [Paul Bourgine](https://fr.linkedin.com/in/paul-bourgine-84a4383) and [Nadine Peyriéras](http://bioemergences.eu/bioemergences/people.php).
