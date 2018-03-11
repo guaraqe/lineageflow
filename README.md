@@ -1,6 +1,6 @@
 ![](documentation/logo.png)
 
-`LineageFlow` is a suite of libraries, executables and tools for the manipulation and exploration of spatio-temporal cell lineages, and measurements over them.
+LineageFlow is a suite of libraries, executables and tools for the manipulation and exploration of spatio-temporal cell lineages, and measurements over them.
 More details on the ideas underlying this system can be found [here](https://pastel.archives-ouvertes.fr/tel-01689773).
 
 - [Installation](#installation)
@@ -67,4 +67,5 @@ with the following interface packages:
 # Acknowledgements
 
 This project has been developed by Juan Raphael Diaz Simões during a PhD thesis, in collaboration between the [Condensed Matter Physics Laboratory](https://pmc.polytechnique.fr/) at [École Polytechnique](http://www.polytechnique.edu/) and [CNRS](http://www.dr4.cnrs.fr/), and the [BioEmergences Laboratory](http://bioemergences.eu/bioemergences/index.php) at [CNRS](http://www.dr4.cnrs.fr/).
+
 The project has been directed by [Denis Grebenkov](https://pmc.polytechnique.fr/pagesperso/dg/), [Paul Bourgine](https://fr.linkedin.com/in/paul-bourgine-84a4383) and [Nadine Peyriéras](http://bioemergences.eu/bioemergences/people.php).
