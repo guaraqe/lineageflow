@@ -1,12 +1,15 @@
-# LineageFlow
-
 ![](documentation/logo.png)
 
-## Installation
+- [Installation](#installation)
+- [Structure](#structure)
+- [Algorithms](#algorithms)
+- [Tools](#tools)
 
-## Usage
+# Installation
 
-## Structure
+# Usage
+
+# Structure
 
 The packages of the suite are organized as follows:
 
@@ -28,7 +31,7 @@ Each package has a well determined function:
 - [`server`](tools/lineageflow-server): server for querying databases, launching algorithms and running exploration tools;
 - [`client`](tools/lineageflow-client): graphical interface for the server API.
 
-## Algorithms
+# Algorithms
 
 The following packages define algorithms both in library and executable form:
 
@@ -42,7 +45,7 @@ The following packages define algorithms both in library and executable form:
 - [`deviations`](algorithms/lineageflow-deviations): statistics of deviations of neighboring cells;
 - [`forces`](algorithms/lineageflow-forces): estimation of forces using least-squares methods;
 
-## Tools
+# Tools
 
 The following tools are also included in the suite:
 
