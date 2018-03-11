@@ -83,20 +83,20 @@ queryMeasure method (name,path) = do
 queryMap ::
   forall f a kg kp.
   (Domain f, Codomain a, kg f a) =>
-  IOMethod kg kp -> Assoc FilePath -> IO (Map Text (f a))
-queryMap db (Assoc l) =
+  IOMethod kg kp -> [(Text,FilePath)] -> IO (Map Text (f a))
+queryMap db l =
   Map.fromList <$> traverse (queryMeasure db) l
 
 --------------------------------------------------------------------------------
 
-getMeasures :: InputCon kg => IOMethod kg kp -> VQuery -> IO Measures
+getMeasures :: InputCon kg => IOMethod kg kp -> VPath -> IO Measures
 getMeasures db input =
   Measures <$>
     queryMap db (input ^. viewer_scalar) <*>
     queryMap db (input ^. viewer_vector) <*>
     queryMap db (input ^. viewer_tensor) <*>
     queryMap db (input ^. viewer_group) <*>
-    traverse (queryMap db . Assoc . pure) (input ^. viewer_tri) <*>
+    traverse (queryMap db . pure) (input ^. viewer_tri) <*>
     traverse (queryMap db) (input ^. viewer_triScalar)
 
 type InputCon (kg :: (* -> *) -> * -> Constraint) =
