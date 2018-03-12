@@ -1,0 +1,29 @@
+packages:
+  infrastructure/lineageflow-base/
+  infrastructure/lineageflow-declaration/
+  infrastructure/lineageflow-query/
+  infrastructure/lineageflow-database/
+  infrastructure/lineageflow-database-sqlite/
+  infrastructure/lineageflow-io/
+  infrastructure/lineageflow-io-cbor/
+  infrastructure/lineageflow-algorithm/
+  infrastructure/lineageflow-types/
+  infrastructure/lineageflow-prelude/
+
+  tools/lineageflow-script/
+  tools/lineageflow-server-api/
+  tools/lineageflow-server/
+  tools/lineageflow-viewer-interface/
+  tools/lineageflow-viewer/
+  tools/lineageflow-plot-interface/
+  tools/lineageflow-plot/
+
+  algorithms/lineageflow-tracking/
+  algorithms/lineageflow-derivatives/
+  algorithms/lineageflow-homogenization/
+  algorithms/lineageflow-statistics/
+  algorithms/lineageflow-triangulations/
+  algorithms/lineageflow-trajectories/
+  algorithms/lineageflow-clustering/
+  algorithms/lineageflow-deviations/
+  algorithms/lineageflow-forces/

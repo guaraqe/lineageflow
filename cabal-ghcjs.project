@@ -1,0 +1,9 @@
+compiler: ghcjs
+packages:
+  infrastructure/lineageflow-base/
+  infrastructure/lineageflow-declaration/
+  infrastructure/lineageflow-query/
+  tools/lineageflow-script/
+  tools/lineageflow-viewer-interface/
+  tools/lineageflow-server-api/
+  tools/lineageflow-client/
