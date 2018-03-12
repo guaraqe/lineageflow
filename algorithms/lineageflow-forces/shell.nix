@@ -1,6 +1,6 @@
 with (
   import <nixpkgs> {
-    overlays = [ (import ../../lineageflow.nix) ];
+    overlays = [ (import ../../nix/overlay.nix) ];
   }
 );
 
