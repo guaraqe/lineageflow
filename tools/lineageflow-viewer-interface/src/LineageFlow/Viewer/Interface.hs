@@ -1,5 +1,9 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE DeriveFunctor #-}
+{-# LANGUAGE DeriveFoldable #-}
+{-# LANGUAGE DeriveTraversable #-}
+
 
 module LineageFlow.Viewer.Interface
   ( VQueryWith (VQuery)
@@ -27,7 +31,7 @@ data VQueryWith a = VQuery
   , _viewer_group :: [a]
   , _viewer_tri :: Maybe a
   , _viewer_triScalar :: Maybe [a]
-  } deriving (Show, Generic, Eq)
+  } deriving (Show, Generic, Eq, Functor, Foldable, Traversable)
 
 $(makeLenses ''VQueryWith)
 
