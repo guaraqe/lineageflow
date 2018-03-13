@@ -35,6 +35,8 @@ library
     LineageFlow.Algorithm.Classes.P
     LineageFlow.Algorithm.Classes.PD
     LineageFlow.Algorithm.Classes.MD
+    LineageFlow.Algorithm.Classes.I
+    LineageFlow.Algorithm.Classes.O
   other-modules:
     LineageFlow.Algorithm.Imports
   build-depends:

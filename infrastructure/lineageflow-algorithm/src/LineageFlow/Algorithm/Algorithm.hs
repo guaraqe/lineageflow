@@ -71,4 +71,4 @@ launchAlgorithm exec comm apath = do
   (file,_) <- openTempFile "/tmp" "apath.yaml"
   Yaml.encodeFile file apath
   spawnCommand $
-    Text.unpack exec <> " " <> Text.unpack comm <> " -q " <> file
+    Text.unpack exec <> " " <> Text.unpack comm <> " run -q " <> file

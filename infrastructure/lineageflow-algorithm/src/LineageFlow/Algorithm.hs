@@ -14,6 +14,8 @@ import LineageFlow.Algorithm.Classes.O as Export
 import LineageFlow.Algorithm.Classes.PD as Export
 import LineageFlow.Algorithm.Classes.MD as Export
 
+import LineageFlow.Declaration as Export
+
 import Data.FileEmbed
 import Language.Haskell.TH.Syntax
 
