@@ -12,9 +12,7 @@ cabal-version:
 build-type:
   Simple
 license:
-  GPL-3
-license-file:
-  LICENSE
+  AGPL-3
 maintainer:
   mail@guaraqe.gq
 author:

@@ -8,9 +8,7 @@ description:
   A LineageFlow database implemented using SQLite and hashed files. More
   details in the README.
 license:
-  GPL-3
-license-file:
-  LICENSE
+  AGPL-3
 copyright:
   2018 Juan Raphael Diaz Simões
 author:

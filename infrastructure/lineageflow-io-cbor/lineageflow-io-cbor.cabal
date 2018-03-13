@@ -8,9 +8,7 @@ description:
   This package implements an IO method for measurements in LineageFlow using
   CBOR files. More details in the README.
 license:
-  GPL-3
-license-file:
-  LICENSE
+  AGPL-3
 declaration:
   2018 Juan Raphael Diaz Simões
 author:

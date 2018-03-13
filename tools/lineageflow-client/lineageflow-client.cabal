@@ -1,16 +1,26 @@
-name:                lineageflow-client
-version:             0.1.0
-synopsis:            Synopsis
--- description:
-license:             GPL-3
-license-file:        LICENSE
-author:              guaraqe
-maintainer:          guaraqe@openmailbox.org
--- copyright:
--- category:
-build-type:          Simple
-extra-source-files:  ChangeLog.md
-cabal-version:       >=1.10
+name:
+  lineageflow-client
+version:
+  0.1.0
+synopsis:
+  Graphical interface for LineageFlow.
+description:
+  Graphical interface for launching algorithms and visualization tools for
+  LineageFlow. More details in the README.
+license:
+  AGPL-3
+author:
+  Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+copyright:
+  2018 Juan Raphael Diaz Simões
+build-type:
+  Simple
+extra-source-files:
+  CHANGELOG.md
+cabal-version:
+  >=1.10
 
 extra-source-files:
   css/test.css

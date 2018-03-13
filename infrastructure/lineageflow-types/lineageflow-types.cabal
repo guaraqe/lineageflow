@@ -8,9 +8,7 @@ description:
   This package defines the fundamental types used in LineageFlow algorithms.
   More details in the README.
 license:
-  GPL-3
-license-file:
-  LICENSE
+  AGPL-3
 copyright:
   2018 Juan Raphael Diaz Simões
 author:

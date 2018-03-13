@@ -8,9 +8,7 @@ description:
   This package implements many homogenization methods for measurements in
   LineageFlow. More details in the README.
 license:
-  GPL-3
-license-file:
-  LICENSE
+  AGPL-3
 author:
   Juan Raphael Diaz Simões
 copyright:
