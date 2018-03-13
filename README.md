@@ -22,7 +22,7 @@ More details on the ideas underlying this system can be found [here](https://pas
 # Installation
 
 LineageFlow has been developed for Linux, and is written in Haskell.
-In order to install it, `nix` must be installed in your computer.
+In order to build it, `nix` must be installed in your computer.
 This can be done with:
 
 ```
