@@ -17,6 +17,7 @@ More details on the ideas underlying this system can be found [here](https://pas
 - [Structure](#structure)
 - [Algorithms](#algorithms)
 - [Tools](#tools)
+- [License](#license)
 - [Acknowledgements](#acknowledgements)
 
 # Installation
@@ -128,6 +129,10 @@ with the following interface packages:
 
 - [`viewer-interface`](tools/lineageflow-viewer-interface): interface for the `lf-viewer` executable;
 - [`plot-interface`](tools/lineageflow-plot-interface): interface for the `lf-plot` executable;
+
+# License
+
+This project is licensed under the AGPL-3.
 
 # Acknowledgements
 
