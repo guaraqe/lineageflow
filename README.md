@@ -1,12 +1,13 @@
 ![](documentation/logo.png)
 
 LineageFlow is a suite of libraries, executables and tools for the manipulation and exploration of spatio-temporal cell lineages and measurements over them.
+It has been developed for the study of [reconstructed cell lineages](https://www.nature.com/articles/ncomms9674) extracted from 3D+time microscopy images of developing organisms.
 Its main features are:
 
 - a modular and composable ecosystem of [algorithms](algorithms);
 - a [declarative interface](infrastructure/lineageflow-algorithm) for algorithms and the generation of executables;
 - an uniform [graphical interface](tools/lineageflow-client) for all algorithms following the interface;
-- integrated tools for the [visual](tools/lineageflow-viewer), [statistical](tools/lineageflow-plot) and [computational](tools/lineageflow-playground).
+- integrated tools for the [visual](tools/lineageflow-viewer), [statistical](tools/lineageflow-plot) and [computational](tools/lineageflow-playground) exploration of measurements over temporal lineages.
 
 More details on the ideas underlying this system can be found [here](https://pastel.archives-ouvertes.fr/tel-01689773).
 
