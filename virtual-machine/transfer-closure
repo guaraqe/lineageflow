@@ -1,0 +1,3 @@
+#!/bin/sh
+store_path=$(nix-store -qR ./out)
+nix-copy-closure --sign --gzip --include-outputs --to lineageflow $store_path

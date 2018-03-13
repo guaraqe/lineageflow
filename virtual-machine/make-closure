@@ -1,0 +1,10 @@
+#!/bin/sh
+nix-env -f ../release.nix -iA \
+  lineageflow-server \
+  lineageflow-viewer \
+  lineageflow-tracking \
+  lineageflow-derivatives \
+  lineageflow-deviations \
+  lineageflow-homogenization \
+  lineageflow-clustering \
+  -p out

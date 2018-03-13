@@ -1,0 +1,4 @@
+#!/bin/sh
+ssh lineageflow "nix-env -i chromium"
+scp -Cr ../dist-ghcjs/build/x86_64-linux/ghcjs-0.2.1/lineageflow-client-0.1.0/c/lf-client/build/lf-client lineageflow:/home/demo/lf-client
+scp -Cr run-client-vm lineageflow:/home/demo/run-lineageflow

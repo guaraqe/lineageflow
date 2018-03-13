@@ -1,0 +1,3 @@
+#!/bin/sh
+lf-server lineageflow-database
+chromium-browser --disable-web-security --user-data-dir ./lf-client/lf-client.jsexe/index.html &>/dev/null

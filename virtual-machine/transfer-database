@@ -1,0 +1,2 @@
+#!/bin/sh
+scp -Cr $1 lineageflow:/home/demo/lineageflow-database
