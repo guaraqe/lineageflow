@@ -1,0 +1,71 @@
+html, body {
+  height: 100%;
+}
+
+/* General */
+
+.main-container {
+  padding: 20px;
+}
+
+.info {
+  max-width: 500px;
+  text-align: justify;
+}
+
+/* Algorithm Runner */
+
+.algorithm-container .algorithm-choose {
+  display: flex;
+}
+
+.algorithm-container .algorithm-choose .algorithm-commands {
+  padding-left: 10px;
+}
+.my-title{
+  text-align: center;
+}
+
+/* Search */
+
+.search-container .search-selection {
+  display: flex;
+  width: 920px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.viewer-measurement {
+  display: block;
+}
+
+.list-choice {
+  display: flex;
+}
+
+/* Measurement */
+.input-container{
+  display: block;
+  padding-left: 25px;
+}
+
+.parameter{
+  display: block;
+  padding-top: 10px;
+}
+
+.measure{
+  padding-top: 10px;
+}
+
+
+table {
+  max-width: 1000px;
+}
+
+/* Title hack */
+
+.ugly-hack {
+  height: 20px;
+  width: 250px;
+}

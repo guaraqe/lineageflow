@@ -1,0 +1,94 @@
+name:                lineageflow-client
+version:             0.1.0
+synopsis:            Synopsis
+-- description:
+license:             GPL-3
+license-file:        LICENSE
+author:              guaraqe
+maintainer:          guaraqe@openmailbox.org
+-- copyright:
+-- category:
+build-type:          Simple
+extra-source-files:  ChangeLog.md
+cabal-version:       >=1.10
+
+extra-source-files:
+  css/test.css
+  css/material.indigo-pink.min.css
+  css/material.min.css
+  css/mdl-selectfield.min.css
+
+executable lf-client
+  main-is:
+    Main.hs
+  other-modules:
+    LineageFlow.Client.Algorithm.Model
+    LineageFlow.Client.Algorithm.View
+    LineageFlow.Client.Algorithm.Elm
+
+    LineageFlow.Client.Measurement.Model
+    LineageFlow.Client.Measurement.View
+
+    LineageFlow.Client.Parameter.View
+
+    LineageFlow.Client.Selection.Model
+    LineageFlow.Client.Selection.View
+
+    LineageFlow.Client.Viewer.Model
+    LineageFlow.Client.Viewer.View
+    LineageFlow.Client.Viewer.Elm
+
+    LineageFlow.Client.Search.View
+    LineageFlow.Client.Search.Elm
+
+    LineageFlow.Client.Menu.Elm
+
+    LineageFlow.Client.ScriptSave.Model
+    LineageFlow.Client.ScriptSave.View
+
+    LineageFlow.Client.Running.Elm
+
+    LineageFlow.Client.Widget.Common
+    LineageFlow.Client.Widget.Dropdown
+    LineageFlow.Client.Widget.MDL
+
+    LineageFlow.Client.Prelude
+    LineageFlow.Client.Types
+
+  build-depends:
+    base,
+    lineageflow-viewer-interface,
+    lineageflow-server-api,
+    lineageflow-script,
+    aeson,
+    bytestring,
+    containers,
+    file-embed,
+    lens,
+    mtl,
+    reflex,
+    reflex-dom,
+    reflex-dom-core,
+    reflex-elm,
+    servant,
+    servant-reflex,
+    text,
+    time,
+    --ghcjs-dom-jsaddle,
+    --jsaddle-warp,
+    --jsaddle-dom,
+    --jsaddle,
+    ghcjs-dom,
+    ghcjs-base,
+    bimap,
+    profunctors
+
+  hs-source-dirs:
+    app
+
+  js-sources:
+    js/material.min.js,
+    js/mdl-selectfield.min.js
+
+  default-language:    Haskell2010
+  ghc-options: -Wall -O2
