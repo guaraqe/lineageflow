@@ -1,0 +1,2 @@
+#!/bin/sh
+nix-shell -p chromium --command "chromium-browser --disable-web-security --user-data-dir dist-ghcjs/build/x86_64-linux/ghcjs-0.2.1/lineageflow-client-0.1.0/c/lf-client/build/lf-client/lf-client.jsexe/index.html &>/dev/null"

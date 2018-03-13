@@ -1,0 +1,2 @@
+#!/bin/sh
+nix-shell client.nix -A shells.ghcjs --command "cabal --project-file=cabal-ghcjs.project --builddir=dist-ghcjs new-build lineageflow-client"
