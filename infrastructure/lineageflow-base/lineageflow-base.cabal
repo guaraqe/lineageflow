@@ -21,8 +21,6 @@ description:
   and algorithms in LineageFlow. More details in the README.
 author:
   Juan Raphael Diaz Simões
-extra-source-files:
-  CHANGELOG.md
 
 source-repository head
   type:

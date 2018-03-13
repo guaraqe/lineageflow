@@ -17,8 +17,6 @@ copyright:
   2018 Juan Raphael Diaz Simões
 build-type:
   Simple
-extra-source-files:
-  ChangeLog.md
 cabal-version:
   >=1.10
 

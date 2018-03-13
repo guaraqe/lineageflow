@@ -14,9 +14,7 @@ maintainer:
 author:
   Juan Raphael Diaz Simões
 copyright:
-  Juan Raphael Diaz Simões
-extra-source-files:
-  CHANGELOG.md
+  2018 Juan Raphael Diaz Simões
 build-type:
   Simple
 cabal-version:

@@ -19,8 +19,6 @@ author:
   Juan Raphael Diaz Simões
 maintainer:
   mail@guaraqe.gq
-extra-source-files:
-  CHANGELOG.md
 
 library
   exposed-modules:

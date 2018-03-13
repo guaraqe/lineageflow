@@ -19,8 +19,6 @@ description:
   the README.
 author:
   Juan Raphael Diaz Simões
-extra-source-files:
-  CHANGELOG.md
 
 library
   exposed-modules:

@@ -21,8 +21,6 @@ copyright:
   2018 Juan Raphael Diaz Simões
 author:
   Juan Raphael Diaz Simões
-extra-source-files:
-  CHANGELOG.md
 
 library
   exposed-modules:
