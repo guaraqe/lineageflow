@@ -1,9 +1,18 @@
 ![](documentation/logo.png)
 
-LineageFlow is a suite of libraries, executables and tools for the manipulation and exploration of spatio-temporal cell lineages, and measurements over them.
+LineageFlow is a suite of libraries, executables and tools for the manipulation and exploration of spatio-temporal cell lineages and measurements over them.
+Its main features are:
+
+- a modular and composable ecosystem of [algorithms](algorithms);
+- a [declarative interface](infrastructure/lineageflow-algorithm) for algorithms and the generation of executables;
+- an uniform [graphical interface](tools/lineageflow-client) for all algorithms following the interface;
+- integrated tools for the [visual](tools/lineageflow-viewer), [statistical](tools/lineageflow-plot) and [computational](tools/lineageflow-playground).
+
 More details on the ideas underlying this system can be found [here](https://pastel.archives-ouvertes.fr/tel-01689773).
 
 - [Installation](#installation)
+- [Usage](#usage)
+- [Development](#development)
 - [Structure](#structure)
 - [Algorithms](#algorithms)
 - [Tools](#tools)
@@ -11,7 +20,61 @@ More details on the ideas underlying this system can be found [here](https://pas
 
 # Installation
 
+LineageFlow has been developed for Linux, and is written in Haskell.
+In order to install it, `nix` must be installed in your computer.
+This can be done with:
+
+```
+curl https://nixos.org/nix/install | sh
+```
+
+Afterwards, build the server, algorithms and client:
+
+```
+./make-server
+./make-client
+```
+
+These can be deployed to a [virtual machine](virtual-machine) if desired.
+
 # Usage
+
+In first place, a location for the database must be chosen.
+An empty folder suffices and it can be populated with tracking data using [`lf-import`](tools/lineageflow-import).
+
+The server can be launched from the terminal with:
+
+```
+./run-server DATABASE_PATH
+```
+
+which will start a session, and log the requests received by the client.
+
+The graphical client can be launched in a separate terminal window with:
+
+```
+./run-client
+```
+
+which will open a chromium window containing the app and a short tutorial.
+
+For the usage from the command line, see the description of the [lineageflow-algorithm](infrastructure/lineageflow-algorithm) package.
+
+# Developing
+
+The code structure of all the [algorithms](algorithms) is the same, and can be used as a model for new ones.
+
+In general lines, one implements algorithms in the `src` folder, and declares them in the `app` folder.
+The file `app/Main.hs` declares the collection of algorithms that the executable contains.
+
+During the development, one configures the system with:
+
+```
+nix-shell --command "cabal configure"
+```
+
+which works thanks to the `shell.nix` file included in all executables.
+Afterwards, one may develop using `cabal repl` and `cabal build` as usual.
 
 # Structure
 
