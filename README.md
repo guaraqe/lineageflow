@@ -60,7 +60,13 @@ The graphical client can be launched in a separate terminal window with:
 
 which will open a chromium window containing the app and a short tutorial.
 
-For the usage from the command line, see the description of the [lineageflow-algorithm](infrastructure/lineageflow-algorithm) package.
+In order to enter a shell with all executables in the environment, simply:
+
+```
+nix-shell
+```
+
+For the usage of algorithms from the command line, see the description of the [lineageflow-algorithm](infrastructure/lineageflow-algorithm) package.
 
 # Developing
 
