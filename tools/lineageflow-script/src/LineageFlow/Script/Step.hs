@@ -44,11 +44,22 @@ instance Bifunctor Step where
 type ScriptStep = Step Entry Var
 type TemplateStep = Step Text Text
 
-instance FromJSON ScriptStep
-instance FromJSON TemplateStep
+instance FromJSON ScriptStep where
+  parseJSON = genericParseJSON $
+    defaultOptions { constructorTagModifier = convertConstructor }
 
-instance ToJSON ScriptStep
-instance ToJSON TemplateStep
+instance FromJSON TemplateStep where
+  parseJSON = genericParseJSON $
+    defaultOptions { constructorTagModifier = convertConstructor }
+
+
+instance ToJSON ScriptStep where
+  toJSON = genericToJSON $
+    defaultOptions { constructorTagModifier = convertConstructor }
+
+instance ToJSON TemplateStep where
+  toJSON = genericToJSON $
+    defaultOptions { constructorTagModifier = convertConstructor }
 
 scriptStepVars :: ScriptStep -> [Var]
 scriptStepVars (Step s) = scriptPartVars s

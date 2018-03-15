@@ -29,13 +29,16 @@ data Entry =
 
 $(makePrisms ''Entry)
 
+extra :: String -> String
+extra = tail . dropWhile (/= '-')
+
 instance ToJSON Entry where
   toJSON = genericToJSON $
-    defaultOptions { constructorTagModifier = convertConstructor }
+    defaultOptions { constructorTagModifier = extra . convertConstructor }
 
 instance FromJSON Entry where
   parseJSON = genericParseJSON $
-    defaultOptions { constructorTagModifier = convertConstructor }
+    defaultOptions { constructorTagModifier = extra . convertConstructor }
 
 instance HasVars Entry where
   getVars (EntryFixed _) = []
