@@ -1,0 +1,114 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        measurement:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: measurement
+        position:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: position
+      outputs:
+        homogenized:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: homogenized-measurement
+      parameters:
+        filter-size:
+          tag: single
+          contents:
+            type:
+              ptype: double
+            fields:
+              value:
+                tag: var
+                contents:
+                  card: single
+                  name: filter-size
+    fields:
+      command: space-gaussian-vector
+      executable: lf-homogenization

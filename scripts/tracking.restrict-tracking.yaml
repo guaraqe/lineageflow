@@ -1,0 +1,271 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        voxel-position:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: voxel
+        time:
+          tag: single
+          contents:
+            type:
+              domain: time
+              codomain: time
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: absolute-time
+        tracking:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: tracking
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: tracking
+        position:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: position
+      outputs:
+        restricted-voxel-position:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: restricted-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: voxel
+        restricted-time:
+          tag: single
+          contents:
+            type:
+              domain: time
+              codomain: time
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: restricted-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: absolute-time
+        restricted-tracking:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: tracking
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: restricted-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: tracking
+        restricted-position:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: restricted-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: position
+      parameters:
+        first:
+          tag: single
+          contents:
+            type:
+              ptype: int
+            fields:
+              value:
+                tag: var
+                contents:
+                  card: single
+                  name: first
+        last:
+          tag: single
+          contents:
+            type:
+              ptype: int
+            fields:
+              value:
+                tag: var
+                contents:
+                  card: single
+                  name: last
+    fields:
+      command: restrict-tracking
+      executable: lf-tracking

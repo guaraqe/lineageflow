@@ -1,0 +1,174 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        velocity:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: velocity
+        contacts:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s2 [cell,time],time])
+              codomain: s2 [cell,time]
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+        forces:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s2 [cell,time],time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: forces
+        position:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: position
+      outputs:
+        stress:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: tensor
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: stress
+      parameters:
+        sigma:
+          tag: single
+          contents:
+            type:
+              ptype: double
+            fields:
+              value:
+                tag: var
+                contents:
+                  card: single
+                  name: sigma
+    fields:
+      command: stress
+      executable: lf-forces

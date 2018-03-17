@@ -1,0 +1,133 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        tc:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: (cell,[time,cell])
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: tc
+        ct:
+          tag: single
+          contents:
+            type:
+              domain: (cell,[time,cell])
+              codomain: (time,[cell,time])
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: ct
+        clusters:
+          tag: many
+          contents:
+          - type:
+              domain: cell
+              codomain: number
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: many
+                  name: clusters
+      outputs:
+        lifted-clusters:
+          tag: many
+          contents:
+          - type:
+              domain: (time,[cell,time])
+              codomain: number
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: many
+                  name: clusters
+      parameters: {}
+    fields:
+      command: lift-clusters
+      executable: lf-clustering

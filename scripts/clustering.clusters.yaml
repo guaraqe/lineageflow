@@ -1,0 +1,144 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        mothers:
+          tag: single
+          contents:
+            type:
+              domain: cell
+              codomain: cell?
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: mothers
+        similarity:
+          tag: single
+          contents:
+            type:
+              domain: s2 cell
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: similarity
+        contacts:
+          tag: single
+          contents:
+            type:
+              domain: s2 cell
+              codomain: s2 cell
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+      outputs:
+        clusters:
+          tag: many
+          contents:
+          - type:
+              domain: cell
+              codomain: number
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: many
+                  name: clusters
+      parameters:
+        number:
+          tag: single
+          contents:
+            type:
+              ptype: int
+            fields:
+              value:
+                tag: var
+                contents:
+                  card: single
+                  name: number
+    fields:
+      command: clusters
+      executable: lf-clustering

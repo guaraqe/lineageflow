@@ -1,0 +1,73 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        forces:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s2 [cell,time],time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: forces
+      outputs:
+        forces-norm:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s2 [cell,time],time])
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: forces-norm
+      parameters: {}
+    fields:
+      command: norm
+      executable: lf-forces

@@ -1,0 +1,99 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        tc:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: (cell,[time,cell])
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: tc
+        triangulation:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s2 [cell,time],time])
+              codomain: s2 [cell,time]
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+      outputs:
+        contacts:
+          tag: single
+          contents:
+            type:
+              domain: s2 cell
+              codomain: s2 cell
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: global-contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+      parameters: {}
+    fields:
+      command: global-neighbors
+      executable: lf-triangulations

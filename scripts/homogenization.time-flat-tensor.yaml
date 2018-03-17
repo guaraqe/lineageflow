@@ -1,0 +1,144 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        tc:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: (cell,[time,cell])
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: tc
+        ct:
+          tag: single
+          contents:
+            type:
+              domain: (cell,[time,cell])
+              codomain: (time,[cell,time])
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: ct
+        measurement:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: tensor
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: measurement
+      outputs:
+        homogenized:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: tensor
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: homogenized-measurement
+      parameters:
+        filter-size:
+          tag: single
+          contents:
+            type:
+              ptype: int
+            fields:
+              value:
+                tag: var
+                contents:
+                  card: single
+                  name: filter-size
+    fields:
+      command: time-flat-tensor
+      executable: lf-homogenization

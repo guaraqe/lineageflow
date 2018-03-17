@@ -1,0 +1,279 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        children:
+          tag: single
+          contents:
+            type:
+              domain: cell
+              codomain: (cell,cell)?
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: children
+        ct:
+          tag: single
+          contents:
+            type:
+              domain: (cell,[time,cell])
+              codomain: (time,[cell,time])
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: ct
+        position:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: position
+      outputs:
+        autocorrelation:
+          tag: single
+          contents:
+            type:
+              domain: ([time,(cell,cell)],[(cell,cell),[time,(cell,cell)]])
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: sisters-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: autocorrelation-averaged
+        msd-0:
+          tag: single
+          contents:
+            type:
+              domain: ([time,(cell,cell)],[(cell,cell),[time,(cell,cell)]])
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: sisters-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: msd-0
+        deviation:
+          tag: single
+          contents:
+            type:
+              domain: ([time,(cell,cell)],[(cell,cell),[time,(cell,cell)]])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: sisters-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: relative-displacement
+        msd:
+          tag: single
+          contents:
+            type:
+              domain: ([time,(cell,cell)],[(cell,cell),[time,(cell,cell)]])
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: sisters-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: msd-averaged
+        increments:
+          tag: single
+          contents:
+            type:
+              domain: ([time,(cell,cell)],[(cell,cell),[time,(cell,cell)]])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: sisters-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: relative-increment
+        autocorrelation-0:
+          tag: single
+          contents:
+            type:
+              domain: ([time,(cell,cell)],[(cell,cell),[time,(cell,cell)]])
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: sisters-subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: autocorrelation-0
+      parameters: {}
+    fields:
+      command: sisters
+      executable: lf-deviations

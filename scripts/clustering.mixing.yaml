@@ -1,0 +1,84 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        similarities:
+          tag: many
+          contents:
+          - type:
+              domain: s2 cell
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: many
+                  name: similarities
+      outputs:
+        mixed:
+          tag: single
+          contents:
+            type:
+              domain: s2 cell
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: mixed-similarity
+      parameters:
+        weights:
+          tag: many
+          contents:
+          - type:
+              ptype: double
+            fields:
+              value:
+                tag: var
+                contents:
+                  card: many
+                  name: weights
+    fields:
+      command: mixing
+      executable: lf-clustering

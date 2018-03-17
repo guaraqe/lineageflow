@@ -1,0 +1,73 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        stresses:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: tensor
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: stress
+      outputs:
+        forces-norm:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: asymmetric
+      parameters: {}
+    fields:
+      command: asym
+      executable: lf-forces

@@ -1,0 +1,163 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        children:
+          tag: single
+          contents:
+            type:
+              domain: cell
+              codomain: (cell,cell)?
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: children
+        pairs:
+          tag: single
+          contents:
+            type:
+              domain: s2 cell
+              codomain: s2 cell
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: pairs
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+        ct:
+          tag: single
+          contents:
+            type:
+              domain: (cell,[time,cell])
+              codomain: (time,[cell,time])
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: ct
+        measure:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: measurement
+      outputs:
+        integral:
+          tag: single
+          contents:
+            type:
+              domain: s2 cell
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: pairs
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: integral
+      parameters: {}
+    fields:
+      command: scalar-pair-path-integral
+      executable: lf-trajectories

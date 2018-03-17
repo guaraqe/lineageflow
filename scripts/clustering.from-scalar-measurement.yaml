@@ -1,0 +1,171 @@
+- tag: import
+  contents:
+  - trajectories.scalar-pair-path-integral
+  - prefix:
+      tag: fixed
+      contents: ''
+    loop: {}
+    vars:
+      subdomain:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: subdomain
+      specimen:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: specimen
+      species:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: species
+      pairs:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: pairs
+      tracking:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: tracking
+      measurement:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: measurement
+      integral:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: measurement-dissimilarity
+- tag: import
+  contents:
+  - clustering.similarity
+  - prefix:
+      tag: fixed
+      contents: ''
+    loop: {}
+    vars:
+      specimen:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: specimen
+      species:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: species
+      tracking:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: tracking
+      similarity:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: measurement-similarity
+      dissimilarity:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: measurement-dissimilarity
+      contacts:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: pairs
+- tag: import
+  contents:
+  - clustering.lifted-clusters
+  - prefix:
+      tag: fixed
+      contents: ''
+    loop: {}
+    vars:
+      subdomain:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: subdomain
+      specimen:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: specimen
+      species:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: species
+      tracking:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: tracking
+      similarity:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: measurement-similarity
+      number:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: number
+      contacts:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: pairs
+      clusters:
+        tag: many
+        contents:
+        - tag: var
+          contents:
+            card: many
+            name: clusters

@@ -1,0 +1,101 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        positions:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: vector
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: var
+                contents:
+                  card: single
+                  name: measurement
+      outputs:
+        delaunay:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s4 [cell,time],time])
+              codomain: s4 [cell,time]
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: delaunay-triangulation
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+        orientation:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s4 [cell,time],time])
+              codomain: sign
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: delaunay-triangulation
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: orientation
+      parameters: {}
+    fields:
+      command: delaunay
+      executable: lf-triangulations

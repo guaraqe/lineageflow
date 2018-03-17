@@ -1,0 +1,69 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        contacts:
+          tag: many
+          contents:
+          - type:
+              domain: s2 cell
+              codomain: s2 cell
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: many
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+      outputs:
+        merged-contacts:
+          tag: single
+          contents:
+            type:
+              domain: s2 cell
+              codomain: s2 cell
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: merged-contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+      parameters: {}
+    fields:
+      command: merge
+      executable: lf-triangulations

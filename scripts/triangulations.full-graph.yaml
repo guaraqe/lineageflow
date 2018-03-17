@@ -1,0 +1,69 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        mothers:
+          tag: single
+          contents:
+            type:
+              domain: cell
+              codomain: cell?
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: mothers
+      outputs:
+        full-graph:
+          tag: single
+          contents:
+            type:
+              domain: s2 cell
+              codomain: s2 cell
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: full-graph
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+      parameters: {}
+    fields:
+      command: full-graph
+      executable: lf-triangulations

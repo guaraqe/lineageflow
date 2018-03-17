@@ -1,0 +1,107 @@
+- tag: import
+  contents:
+  - clustering.clusters
+  - prefix:
+      tag: fixed
+      contents: ''
+    loop: {}
+    vars:
+      subdomain:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: subdomain
+      specimen:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: specimen
+      species:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: species
+      tracking:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: tracking
+      similarity:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: similarity
+      number:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: number
+      contacts:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: contacts
+      clusters:
+        tag: many
+        contents:
+        - tag: var
+          contents:
+            card: many
+            name: clusters
+- tag: import
+  contents:
+  - clustering.lift-clusters
+  - prefix:
+      tag: fixed
+      contents: ''
+    loop: {}
+    vars:
+      subdomain:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: subdomain
+      specimen:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: specimen
+      species:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: species
+      tracking:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: tracking
+      clusters:
+        tag: many
+        contents:
+        - tag: var
+          contents:
+            card: many
+            name: clusters

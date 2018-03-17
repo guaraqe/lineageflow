@@ -1,0 +1,128 @@
+- tag: import
+  contents:
+  - derivatives.lanczos
+  - prefix:
+      tag: fixed
+      contents: ''
+    loop: {}
+    vars:
+      subdomain:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: subdomain
+      specimen:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: specimen
+      species:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: species
+      derivative-order:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: derivative-order
+      smoothing-order:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: smoothing-order
+      tracking:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: tracking
+      derived-measurement:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: derived-measurement
+      measurement:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: measurement
+      filter-size:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: temporal-filter-size
+- tag: import
+  contents:
+  - homogenization.space-gaussian-vector
+  - prefix:
+      tag: fixed
+      contents: ''
+    loop: {}
+    vars:
+      subdomain:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: subdomain
+      specimen:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: specimen
+      species:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: species
+      homogenized-measurement:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: homogenized-measurement
+      tracking:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: tracking
+      measurement:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: derived-measurement
+      filter-size:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: spatial-filter-size

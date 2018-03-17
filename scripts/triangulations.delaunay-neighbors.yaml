@@ -1,0 +1,93 @@
+- tag: import
+  contents:
+  - triangulations.delaunay
+  - prefix:
+      tag: fixed
+      contents: ''
+    loop: {}
+    vars:
+      subdomain:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: subdomain
+      specimen:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: specimen
+      species:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: species
+      delaunay-triangulation:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: delaunay-triangulation
+      tracking:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: tracking
+      measurement:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: measurement
+- tag: import
+  contents:
+  - triangulations.neighbors
+  - prefix:
+      tag: fixed
+      contents: ''
+    loop: {}
+    vars:
+      specimen:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: specimen
+      species:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: species
+      triangulation:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: delaunay-triangulation
+      tracking:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: tracking
+      contacts:
+        tag: single
+        contents:
+          tag: var
+          contents:
+            card: single
+            name: delaunay-triangulation

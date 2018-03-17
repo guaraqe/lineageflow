@@ -1,0 +1,170 @@
+- tag: step
+  contents:
+    type:
+      inputs:
+        tc:
+          tag: single
+          contents:
+            type:
+              domain: (time,[cell,time])
+              codomain: (cell,[time,cell])
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: tc
+        ct:
+          tag: single
+          contents:
+            type:
+              domain: (cell,[time,cell])
+              codomain: (time,[cell,time])
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: subdomain
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: ct
+        contacts:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s2 [cell,time],time])
+              codomain: s2 [cell,time]
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+      outputs:
+        connexity:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s2 [cell,time],time])
+              codomain: scalar
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: homogenized-contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: connexity
+        contacts:
+          tag: single
+          contents:
+            type:
+              domain: (time,[s2 [cell,time],time])
+              codomain: s2 [cell,time]
+            fields:
+              subdomain:
+                tag: var
+                contents:
+                  card: single
+                  name: homogenized-contacts
+              specimen:
+                tag: var
+                contents:
+                  card: single
+                  name: specimen
+              species:
+                tag: var
+                contents:
+                  card: single
+                  name: species
+              tracking:
+                tag: var
+                contents:
+                  card: single
+                  name: tracking
+              measurement:
+                tag: fixed
+                contents: identity
+      parameters:
+        filter-size:
+          tag: single
+          contents:
+            type:
+              ptype: int
+            fields:
+              value:
+                tag: var
+                contents:
+                  card: single
+                  name: filter-size
+    fields:
+      command: contacts
+      executable: lf-homogenization
