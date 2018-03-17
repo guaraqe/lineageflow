@@ -21,15 +21,15 @@ let
   phantom-index-src = superPkgs.fetchFromGitHub {
     owner  = "guaraqe";
     repo   = "phantom-index";
-    rev    = "db4cae5d84482251b388fd608bd7c279c5a607c6";
-    sha256 = "19d4q6myxz1rsr6anp9yifagsmhx1k49fwl3vyi6izn6xg5k46is";
+    rev    = "c196517df20060a9985faad45f5aa5df4e5df596";
+    sha256 = "18b424pbzj8191i558xdr4lxbccnw5bqqqsi0drbka84ilxj0qsl";
   };
 
   constraint-classes-src = superPkgs.fetchFromGitHub {
     owner  = "guaraqe";
     repo   = "constraint-classes";
-    rev    = "3f6bb69d0683423c2700502d1a41261ce4e9cee2";
-    sha256 = "0sz6msj5km9wssn7cr0s673lbri15iqv78lnsiiax4rw2wp9zjsq";
+    rev    = "c14899404e25f932c976905879e95d0cb5a856b";
+    sha256 = "1rvk81q0faashkbfg02ql6bdn6rhm3clk76q2xi9602yqgxpwbsb";
   };
 
   LATS-src = superPkgs.fetchFromGitHub {

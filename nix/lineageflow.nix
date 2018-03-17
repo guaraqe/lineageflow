@@ -29,5 +29,7 @@ call:
     lineageflow-server = call ../tools/lineageflow-server {};
     lineageflow-script = call ../tools/lineageflow-script {};
     lineageflow-playground = call ../tools/lineageflow-playground {};
+    lineageflow-import = call ../tools/lineageflow-import {};
+    lineageflow-export = call ../tools/lineageflow-export {};
   }
 

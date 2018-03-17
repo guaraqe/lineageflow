@@ -16,5 +16,7 @@ in
         lineageflow-server
         lineageflow-plot
         lineageflow-viewer
+        lineageflow-import
+        lineageflow-export
       ];
   }
