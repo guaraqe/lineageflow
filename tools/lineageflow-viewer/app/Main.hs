@@ -26,13 +26,8 @@ import qualified Data.Yaml as Yaml
 import Data.IORef
 import GHC.Float
 
-main = do
-  fontPath <- getDataFileName "attach/tgFreeSans.ttf"
-  putStrLn fontPath
-  main'
-
-main' :: IO ()
-main' = join . execParser $
+main :: IO ()
+main = join . execParser $
   info (helper <*> parser) $
   fullDesc <>
   header "lineageflow-viewer" <>
