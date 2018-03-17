@@ -97,12 +97,17 @@ main =
          header "lf-import" )
 
 run :: InputType -> IO ()
-run (ILineageTree inp) = runInput "lineagetree" formatLineageTree inp
-run (ICSVData inp) = runInput "csv" formatCSV inp
+run (ILineageTree inp) = do
+  putStrLn "Converting tracking data..."
+  runInput "lineagetree" formatLineageTree inp
+run (ICSVData inp) = do
+  putStrLn "Converting tracking data..."
+  runInput "csv" formatCSV inp
 run (ISmart smr) =
   case fromSmart smr of
     Nothing -> error "Either format not supported or badly formatted filepath"
-    Just inpt -> run inpt
+    Just inpt -> do
+      run inpt
 
 fromSmart :: Smart -> Maybe InputType
 fromSmart (Smart path dbpath voxel) =
@@ -161,35 +166,36 @@ putInitial name inp (Initial tra pos tim msel) = do
     db = sqliteDatabase (input_database inp)
 
 
-  withSystemTempFile "import" $ \file _ -> do
-    io_put cbor file tra
+  withSystemTempDirectory "import" $ \path -> do
+    putStrLn "Writing tracking..."
+    io_put cbor (path </> "tracking")  tra
     db_put db aQuery
       (makeQuery "(time,[cell,time])" "tracking" "tracking")
-      file
+      (path </> "tracking")
 
-  withSystemTempFile "import" $ \file _ -> do
-    io_put cbor file pos
+    putStrLn "Writing voxels..."
+    io_put cbor (path </> "voxel") pos
     db_put db aQuery
-      (makeQuery "(time,[cell,time])" "vector" "voxel-position")
-      file
+      (makeQuery "(time,[cell,time])" "vector" "voxel")
+      (path </> "voxel")
 
-  withSystemTempFile "import" $ \file _ -> do
-    io_put cbor file (rescale scale pos)
+    putStrLn "Writing position..."
+    io_put cbor (path </> "position") (rescale scale pos)
     db_put db aQuery
       (makeQuery "(time,[cell,time])" "vector" "position")
-      file
+      (path </> "position")
 
-  withSystemTempFile "import" $ \file _ -> do
-    io_put cbor file tim
+    putStrLn "Writing time..."
+    io_put cbor (path </> "time") tim
     db_put db aQuery
       (makeQuery "time" "time" "absolute-time")
-      file
+      (path </> "time")
 
-  case msel of
-    Nothing -> return ()
-    Just sel ->
-      withSystemTempFile "import" $ \file _ -> do
-        io_put cbor file sel
+    case msel of
+      Nothing -> return ()
+      Just sel -> do
+        putStrLn "Writing selection..."
+        io_put cbor (path </> "selection") sel
         db_put db aQuery
           (makeQuery "(time,[cell,time])" "number" "selection")
-          file
+          (path </> "selection")

@@ -63,6 +63,7 @@ executable lf-import
     optparse-applicative,
     filepath,
     temporary,
+    deepseq,
     text
   default-language:
     Haskell2010

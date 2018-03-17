@@ -1,4 +1,4 @@
-{ mkDerivation, base, bytestring, cassava, filepath
+{ mkDerivation, base, bytestring, cassava, deepseq, filepath
 , lineageflow-database-sqlite, lineageflow-io-cbor
 , lineageflow-prelude, lineageflow-tracking, linear
 , optparse-applicative, stdenv, temporary, text, vector
@@ -15,9 +15,9 @@ mkDerivation {
     lineageflow-tracking vector vector-algorithms
   ];
   executableHaskellDepends = [
-    base bytestring filepath lineageflow-database-sqlite
+    base bytestring deepseq filepath lineageflow-database-sqlite
     lineageflow-io-cbor linear optparse-applicative temporary text
   ];
-  description = "Initial project template from stack";
-  license = stdenv.lib.licenses.gpl3;
+  description = "Utilities for importing tracking files in LineageFlow";
+  license = stdenv.lib.licenses.agpl3;
 }
