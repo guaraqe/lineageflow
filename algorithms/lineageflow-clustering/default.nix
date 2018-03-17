@@ -16,6 +16,6 @@ mkDerivation {
     base clustering harpack lineageflow-algorithm lineageflow-io-cbor
     lineageflow-prelude lineageflow-statistics matrices
   ];
-  description = "Clustering of cell trajectories";
+  description = "Clustering of cell trajectories for LineageFlow";
   license = stdenv.lib.licenses.agpl3;
 }

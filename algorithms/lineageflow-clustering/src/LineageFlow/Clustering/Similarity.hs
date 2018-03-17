@@ -8,9 +8,9 @@ import LineageFlow.Statistics
 toSimilarity :: Array c Double -> Array c Double
 toSimilarity d =
   let
-    std = snd $ meanStdWith id d
+    s = std d
   in
-    _fmap (simFunction .  (/ std)) d
+    _fmap (simFunction .  (/ s)) d
 
 simFunction :: Double -> Double
 simFunction x = if isNaN x then 0.00 else exp (-x ^ (2 :: Int) / 2)
