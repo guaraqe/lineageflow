@@ -18,6 +18,7 @@ import Data.Functor.Identity
 import System.Directory
 import System.Exit
 import System.FilePath
+import System.IO
 import System.IO.Temp
 import System.Posix.Files (createSymbolicLink)
 import System.Process
@@ -42,11 +43,14 @@ launch aquery =
 
     deployAllInputs inputFolder inputs
     let apath = makeAPath inputFolder outputFolder aquery
-    handl <- liftIO $ launchAlgorithm exec comm apath
+    (err,handl) <- liftIO $ launchAlgorithm exec comm apath
     exit <- liftIO $ waitForProcess handl
 
     case exit of
-      ExitFailure _ -> return ()
+      ExitFailure code -> liftIO $ do
+        putStrLn $ "Executable " <> Text.unpack exec <> " failed with code " <> show code
+        errmsg <- hGetContents err
+        putStrLn $ "Error message:\n" <> errmsg
       ExitSuccess -> do
         saveAllOutputs aquery outputFolder outputs
         liftIO $ removeDirectoryRecursive inputFolder

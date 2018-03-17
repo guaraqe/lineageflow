@@ -17,8 +17,9 @@ delaunay ::
   ( DArray t (DS4 t i) (DS4 t i)
   , DArray t (DS4 t i) Sign )
 delaunay points =
-  bimap (mkIx . force . fromList) (mkIx . force . fromList) .
-  List.unzip .
+  force $
+  bimap (mkIx . fromList) (mkIx . fromList) $
+  List.unzip $
   fmap (\v -> s4normalize $
          S4 (pack $ v ! 0) (pack $ v ! 1) (pack $ v ! 2) (pack $ v ! 3)) $
   simplices

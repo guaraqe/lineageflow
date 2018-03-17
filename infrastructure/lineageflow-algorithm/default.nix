@@ -13,5 +13,5 @@ mkDerivation {
     template-haskell temporary text yaml
   ];
   description = "Algorithm interface generator for LineageFlow algorithms";
-  license = stdenv.lib.licenses.gpl3;
+  license = stdenv.lib.licenses.agpl3;
 }

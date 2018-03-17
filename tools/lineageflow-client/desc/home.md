@@ -3,11 +3,11 @@ Welcome to LineageFlow!
 </p>
 
 <p>
-This interface is divided in four parts, accessible through the menu on the left.
+This interface is divided in parts which are accessible through the menu on the left.
 </p>
 
 <p>
-The first is the <b>Algorithm Runner</b>.
+ <b>Algorithm Runner</b>
 From there you can lauch algorithms by choosing an executable and a command.
 The corresponding inputs and outputs will appear, which must be filled.
 Finally, you can press the <i>Run</i> button on the top of the page to launch it.

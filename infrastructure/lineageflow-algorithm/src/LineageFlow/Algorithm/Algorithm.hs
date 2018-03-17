@@ -23,6 +23,7 @@ import Data.Proxy
 import qualified Data.Text as Text
 import qualified Data.Yaml as Yaml
 
+import GHC.IO.Handle
 import System.Process
 import System.IO.Temp
 
@@ -66,9 +67,10 @@ runAlgorithm
 
   oPut iomethod (unConst out) output
 
-launchAlgorithm :: Text -> Text -> APath -> IO ProcessHandle
+launchAlgorithm :: Text -> Text -> APath -> IO (Handle, ProcessHandle)
 launchAlgorithm exec comm apath = do
   (file,_) <- openTempFile "/tmp" "apath.yaml"
   Yaml.encodeFile file apath
-  spawnCommand $
+  (_,_,err,process) <- runInteractiveCommand $
     Text.unpack exec <> " " <> Text.unpack comm <> " run -q " <> file
+  return (err, process)

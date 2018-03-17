@@ -57,7 +57,7 @@ main = do
   path <- makeAbsolute path'
   processes <- newIORef (initState path)
   _ <- forkIO $ forever $ do
-    threadDelay 5000000
+    threadDelay 1000000
     runApp renewState processes
   run 32323 $ logStdoutDev (app processes)
 

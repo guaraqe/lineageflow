@@ -21,8 +21,8 @@ let
   phantom-index-src = superPkgs.fetchFromGitHub {
     owner  = "guaraqe";
     repo   = "phantom-index";
-    rev    = "c196517df20060a9985faad45f5aa5df4e5df596";
-    sha256 = "18b424pbzj8191i558xdr4lxbccnw5bqqqsi0drbka84ilxj0qsl";
+    rev    = "6234f6263683ab79d4bcde1804e075ec06e73950";
+    sha256 = "1lqggn5xdfv0h2wk91w2zawhnalgxwbkahrkz8if9858dzzna6x9";
   };
 
   constraint-classes-src = superPkgs.fetchFromGitHub {
