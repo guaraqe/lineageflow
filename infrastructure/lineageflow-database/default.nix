@@ -1,9 +1,9 @@
 { mkDerivation, base, lineageflow-query, stdenv, text }:
 mkDerivation {
-  pname = "lineageflow-executable";
+  pname = "lineageflow-database";
   version = "0.1.0";
   src = ./.;
   libraryHaskellDepends = [ base lineageflow-query text ];
-  description = "Synopsis";
-  license = stdenv.lib.licenses.gpl3;
+  description = "Database interface for LineageFlow";
+  license = stdenv.lib.licenses.agpl3;
 }
