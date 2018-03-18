@@ -50,8 +50,14 @@ Finally, transfer the closure with `./transfer-closure`, which can take some tim
 In order to intall the packages in the environment, execute the following in the virtual machine:
 
 ```
-LF=$(ls /nix/store | grep lineageflow | egrep -v doc)
-for P in $LF; do nix-env -i $P done
+ls -d -1 /nix/store/* | grep lineageflow | egrep -v doc | egrep -v data | xargs nix-env -i
+```
+
+If this is a reinstall, it is better to remove the old versions before:
+
+```
+niv-env -q | grep lineageflow | xargs -L1 nix-env -1
+sudo nix-collect-garbage -d
 ```
 
 ## Transferring the client
