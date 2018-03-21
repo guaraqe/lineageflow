@@ -1,7 +1,7 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ nixpkgs ? import <nixpkgs> {} }:
 
 let
-  reflex-platform = pkgs.fetchFromGitHub {
+  reflex-platform = nixpkgs.fetchFromGitHub {
     owner  = "reflex-frp";
     repo   = "reflex-platform";
     rev    = "f003577699ad5a47f8275dad4f05cdb15c4bcdf5";
@@ -10,6 +10,8 @@ let
 in
   (import reflex-platform {}).project ({ pkgs, ... }: {
     overrides = import ./nix/client-overrides.nix pkgs;
+
+    withHoogle = false;
 
     packages = {
       lineageflow-base = ./infrastructure/lineageflow-base;
@@ -30,6 +32,6 @@ in
         "lineageflow-server-api"
         "lineageflow-script"
         "lineageflow-viewer-interface"
-        ];
+      ];
     };
   })
