@@ -14,6 +14,7 @@ More details on the ideas underlying this system can be found [here](https://pas
 - [Installation](#installation)
 - [Usage](#usage)
 - [Development](#development)
+- [Architecture](#architecture)
 - [Structure](#structure)
 - [Algorithms](#algorithms)
 - [Tools](#tools)
@@ -94,10 +95,8 @@ Afterwards, one may develop using `cabal repl` and `cabal build` as usual.
 # Architecture
 
 LineageFlow has been conceived as an ecosystem of roughly independent parts that interact through *declarative interfaces*.
-Internally, this interface is defined by the Haskell [types](infrastructure/lineageflow-types) modelling the object of study and the data manipulated.
-Externally, this interface is defined by a model of the interaction of users with algorithms.
-
-The central point of this external interface is the description of algorithms as entities that:
+Internally, this interface is defined by the Haskell [types](infrastructure/lineageflow-types) modelling the object of study and the data being manipulated.
+Externally, this interface is defined by a model of the interaction of users with algorithms, centered on the description of algorithms as entities that:
 
 - takes parameters as input;
 - takes sets of named measurements as input;
@@ -105,18 +104,14 @@ The central point of this external interface is the description of algorithms as
 
 This [base](infrastructure/lineageflow-base) definition has two derivations:
 
-- algorithm [declarations](infrastructure/lineageflow-declaration), that allow users to know how to use them;
-- algorithm [queries](infrastructure/lineageflow-query), which allows one to apply the algorithm to actual data.
+- algorithm [declarations](infrastructure/lineageflow-declaration), that allow users to be informed on what are its parameters, inputs and outputs ;
+- algorithm [queries](infrastructure/lineageflow-query), allows one to instantiate these parameters, inputs and outputs with actual data, making it possible to run the algorithm.
 
-All interaction with algorithms happens through these interfaces, and tools have been created to make the definition and use of them more practical and precise for both developers and users.
-
+All interaction with algorithms happens through these interfaces, and for this reason, tools have been created to make the definition and use of these more practical and precise for both developers and users.
 For developers, this is made by leveraging the type system of Haskell in order to [automatically generate](infrasctructure/lineageflow-algorithm) interfaces from type definitions.
+For users, this is given by a graphical user interface based on a [server](tools/lineageflow-server)-[client](tools/lineageflow-client) communication model, which automatizes the interpretation of algorithm definitions and generates forms guaranteeing that only well-formed queries can be made.
 
-For users, an user interface based on a [server](tools/lineageflow-server)-[client](tools/lineageflow-client) communicates automatizes the interpretation of algorithm definitions and generates formularies that guarantee that only well formed queries are made.
-
-Other design decisions include the possibility of different [databases](infrastructure/lineageflow-database) for storing measurements, and different [io methods](infrastructure/lineageflow-io) for reading them from files.
-
-For the exploration of results, we offer tools for the 3D [visualisation](tools/lineageflow-viewer) of measurements over temporal lineages, and the generation of [statistical plots](tools/lineageflow-plot).
+Other design decisions include the possibility of multiple [databases](infrastructure/lineageflow-database) for storing measurements, and multiple [io methods](infrastructure/lineageflow-io) for reading measurements from files.
 
 # Structure
 
