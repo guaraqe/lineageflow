@@ -62,7 +62,7 @@ operation Parameter (Input (S tracking)) =
     (S ct)
   where
     LineageSet mothers children tc ct =
-      lineageSetFromTracking (unIx . getCompose $ tracking)
+      lineageSetFromTracking tracking
 
 algorithm :: Algorithm Parameter Input Output
 algorithm = makeAlgorithm

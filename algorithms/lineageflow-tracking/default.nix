@@ -19,6 +19,6 @@ mkDerivation {
     lineageflow-prelude nonempty-alternative optparse-applicative rlist
     serialise storable-record unordered-containers
   ];
-  description = "A framework for lineages evolving on time";
-  license = stdenv.lib.licenses.gpl3;
+  description = "Manipulation of cell trackings";
+  license = stdenv.lib.licenses.agpl3;
 }

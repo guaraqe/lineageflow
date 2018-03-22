@@ -223,5 +223,5 @@ convertCT = Compose . mkIx . fmap (\(_,l) -> fromList (reverse l)) . Map.toAscLi
 
 -------------------------------------------------------------------------------
 
-lineageSetFromTracking :: [Array (Dep Time Cell) Tracking] -> LineageSet
-lineageSetFromTracking  = getLineageSet . iterateTime
+lineageSetFromTracking :: DSumMapL Time Cell Tracking -> LineageSet
+lineageSetFromTracking  = getLineageSet . iterateTime . unIx . getCompose
