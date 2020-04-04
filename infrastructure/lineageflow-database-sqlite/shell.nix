@@ -1,7 +1,3 @@
-with (
-  import <nixpkgs> {
-    overlays = [ (import ../../nix/overlay.nix) ];
-  }
-);
+with (import ../../nix/nixpkgs.nix);
 
 (haskellPackages.callPackage ./. {}).env

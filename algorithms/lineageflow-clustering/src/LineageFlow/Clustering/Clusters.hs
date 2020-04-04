@@ -8,7 +8,7 @@ import qualified LineageFlow.ArrayU as ArrayU
 import qualified LineageFlow.Linear.Raw as L
 
 import qualified AI.Clustering.KMeans as C
-import qualified Data.Matrix.Dense.Generic as C
+import qualified Data.Matrix.Generic as C
 
 --------------------------------------------------------------------------------
 

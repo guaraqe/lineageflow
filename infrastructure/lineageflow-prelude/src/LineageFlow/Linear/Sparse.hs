@@ -31,7 +31,7 @@ import qualified Data.IntMap.Strict as IntMap
 import Data.IntMap.Strict (IntMap)
 
 import LATS hiding (Vector, rows, cols)
-import qualified LATS.Vector.Mutable as MLinear
+import qualified Data.Vector.Generic.Mutable as MLinear
 import qualified LineageFlow.Linear.Raw as Linear
 
 import Control.Lens hiding (Fold)

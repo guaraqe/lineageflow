@@ -5,6 +5,7 @@ module LineageFlow.Deviations.Algorithm
   , bornCells
   , allCellsBy
   , result
+  , relativeTrajectories
   , TCCMap
   ) where
 
@@ -82,3 +83,12 @@ result ct pos pairs =
 {-# INLINE result #-}
 
 ocomp f = Compose . _fmap f . getCompose
+
+relativeTrajectories ::
+  DSumTA Cell Time ->
+  DSumMapA Time Cell Vector ->
+  [(Cell, Cell)] -> -- cell
+  DSumMapL (Cell, Cell) Time Vector
+relativeTrajectories ct pos pairs =
+  differences ct pos pairs
+

@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import ./nix/nixpkgs.nix }:
 
 let
   inherit (pkgs) stdenv;
@@ -8,6 +8,7 @@ in
     buildInputs = with (import ./release.nix);
       [
         lineageflow-tracking
+        lineageflow-deviations
         lineageflow-derivatives
         lineageflow-homogenization
         lineageflow-triangulations

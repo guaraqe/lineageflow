@@ -8,15 +8,13 @@ module LineageFlow.Database.SQLite.Implementation
 
 import LineageFlow.Database
 
-import LineageFlow.Database.SQLite.Types
 import LineageFlow.Database.SQLite.SQL
 
-import Data.Monoid
 import Data.Maybe
 import System.FilePath
 import qualified Data.Text as Text
 
-import Data.Aeson (Value (..))
+import Data.Aeson (Value (..), encode, decode)
 
 import Database.Selda
 import Database.Selda.SQLite
@@ -65,7 +63,7 @@ getMeasurementIn path q = do
 
   prepareDatabase path
 
-  r <- withSQLite sqlPath (matchRows (toAssoc q) "hash")
+  r <- withSQLite sqlPath (matchMeasurementss (toAssoc q) "hash")
 
   case r of
     [] -> error $ "Measurement not present in database: " <> show q
@@ -96,15 +94,15 @@ putMeasurementIn path aquery mquery m = do
   h <- getHash m
   copyFile m (storePath </> Text.unpack h <.> "cbor")
 
-  withSQLite sqlPath $ upsertRow (toRow mquery aquery h)
+  withSQLite sqlPath $ upsertMeasurements (toMeasurements mquery aquery h)
 
 getHash :: FilePath -> IO Text
 getHash path = do
   b <- ByteStringLazy.readFile path
   return $ Text.pack $ show (hashlazy b :: Digest SHA256)
 
-toRow :: MQuery -> AQuery -> Text -> Row
-toRow (Query fields (MType domain codomain)) aquery h =
+toMeasurements :: MQuery -> AQuery -> Text -> Measurements
+toMeasurements (Query fields (MType domain codomain)) aquery h =
   let
     species = fromJust $ lookupAssoc "species" fields
     specimen = fromJust $ lookupAssoc "specimen" fields
@@ -112,7 +110,7 @@ toRow (Query fields (MType domain codomain)) aquery h =
     subdomain = fromJust $ lookupAssoc "subdomain" fields
     measurement = fromJust $ lookupAssoc "measurement" fields
   in
-    Row species specimen tracking domain subdomain codomain measurement h aquery Null
+    Measurements species specimen tracking domain subdomain codomain measurement h (encode aquery) (encode Null)
 
 --------------------------------------------------------------------------------
 
@@ -121,11 +119,11 @@ search path assoc = fmap (fmap rowToInfo) $ do
   let
     sqlPath = path </> "lf-database" <.> "sqlite"
 
-  withSQLite sqlPath (searchRows assoc)
+  withSQLite sqlPath (searchMeasurementss assoc)
 
-rowToInfo :: Row -> MInfo
+rowToInfo :: Measurements -> MInfo
 rowToInfo
-  (Row species specimen tracking domain subdomain codomain measurement hsh aquery extra) =
+  (Measurements species specimen tracking domain subdomain codomain measurement hsh aquery extra) =
   MInfo
     (Query
        ( Assoc [
@@ -136,9 +134,9 @@ rowToInfo
        , ("measurement", measurement)
        ])
        (MType domain codomain))
-    aquery
+    (fromJust $ decode aquery)
     hsh
-    extra
+    (fromJust $ decode extra)
 
 --------------------------------------------------------------------------------
 
@@ -147,4 +145,4 @@ match path assoc key = do
   let
     sqlPath = path </> "lf-database" <.> "sqlite"
 
-  withSQLite sqlPath (matchRows assoc key)
+  withSQLite sqlPath (matchMeasurementss assoc key)

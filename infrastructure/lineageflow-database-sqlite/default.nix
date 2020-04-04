@@ -11,5 +11,5 @@ mkDerivation {
     lineageflow-database selda selda-sqlite temporary text
   ];
   description = "A database for LineageFlow implemented with SQLite";
-  license = stdenv.lib.licenses.gpl3;
+  license = stdenv.lib.licenses.agpl3;
 }

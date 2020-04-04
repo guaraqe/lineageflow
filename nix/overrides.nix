@@ -4,13 +4,6 @@ let
   doJailbreak = superPkgs.haskell.lib.doJailbreak;
   arpackCompat = superPkgs.arpack.override { openblas = selfPkgs.openblasCompat; };
 
-  cborg-src = superPkgs.fetchFromGitHub {
-    owner  = "well-typed";
-    repo   = "cborg";
-    rev    = "99ec2b038538b279625c10640e3d5e8d80cd7a1d";
-    sha256 = "0fpwi6wbhkc3xqfw2sg0zr74w0a8p3dwb86wawdg97g6dyqlhpg0";
-  };
-
   eigen-src = superPkgs.fetchFromGitHub {
     owner  = "osidorkin";
     repo   = "haskell-eigen";
@@ -21,8 +14,8 @@ let
   phantom-index-src = superPkgs.fetchFromGitHub {
     owner  = "guaraqe";
     repo   = "phantom-index";
-    rev    = "6234f6263683ab79d4bcde1804e075ec06e73950";
-    sha256 = "1lqggn5xdfv0h2wk91w2zawhnalgxwbkahrkz8if9858dzzna6x9";
+    rev    = "9841a8d438134d83df033ee1995520e526b04ff5";
+    sha256 = "13ibvgf5sllhw3sa022k3qb8yy71nrs34ifqar2k0wra3w5qrjj4";
   };
 
   constraint-classes-src = superPkgs.fetchFromGitHub {
@@ -35,15 +28,15 @@ let
   LATS-src = superPkgs.fetchFromGitHub {
     owner  = "guaraqe";
     repo   = "LATS";
-    rev    = "d6fb3b23162db83c96e27bfcca9f42094dd0499f";
-    sha256 = "0c5qp5fm3a2mz375r7fwl21ghq3xk5pczmng01n6qs7z2j1xwdnp";
+    rev    = "89ee8b68d8ec204414a0455a3c2030ddcf3d41f4";
+    sha256 = "18ravs2g9iw5bp2glw6g49k2r3vz9yzlpp252rkyy0a9blvjh0x9";
   };
 
   harpack-src = superPkgs.fetchFromGitHub {
     owner  = "guaraqe";
     repo   = "harpack";
-    rev    = "da5b0d13072fb9e4cc27dd89bfc4772c8a022644";
-    sha256 = "0vhsh3yjlpphsf4mpky7cs3yv5mvxm49ix322ycx8l5nybh9abwk";
+    rev    = "f7c4ab6b7ee429c0dd49b94b164713b4c8992011";
+    sha256 = "02ix2vsm3zrk1mq1cdv0fwsrskdh34462gcq08dhq98fjp45wv19";
   };
 
   qhull-simple-src = superPkgs.fetchFromGitHub {
@@ -72,18 +65,15 @@ in
     qhull-simple =
       self.callCabal2nix "qhull-simple" qhull-simple-src {};
 
-    gtkglext =
-      self.callPackage ./deps/gtkglext.nix {
-        gtkglext = selfPkgs.gnome2.gtkglext;
-        gtk_system = selfPkgs.gnome2.gtk;
-        libXmu = selfPkgs.xorg.libXmu;
-      };
-
-    cborg =
-      self.callCabal2nix "cborg" (cborg-src + "/cborg") {};
-    serialise =
-      self.callCabal2nix "serialise" (cborg-src + "/serialise") {};
+    gtkglext = doJailbreak (super.gtkglext);
+     
+       # (self.callPackage ./deps/gtkglext.nix {
+       #   gtkglext = selfPkgs.gnome2.gtkglext;
+       #   gtk_system = selfPkgs.gnome2.gtk;
+       #   libXmu = selfPkgs.xorg.libXmu;
+       # });
 
     eigen =
       self.callCabal2nix "eigen" eigen-src {};
+
   }

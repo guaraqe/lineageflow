@@ -27,6 +27,7 @@ import qualified Data.Text as Text
 import qualified Data.IntMap.Strict as IntMap
 import qualified Data.Map.Strict as Map
 import qualified Data.Set as Set
+import qualified Network.Wai.Middleware.Cors as Cors
 
 import Control.Concurrent
 
@@ -62,7 +63,12 @@ main = do
   run 32323 $ logStdoutDev (app processes)
 
 app :: Processes -> Application
-app processes = serve (Proxy :: Proxy API) (server processes)
+app processes =
+    Cors.cors (\_ -> Just options) $
+    serve (Proxy :: Proxy API) (server processes)
+  where
+    options = Cors.simpleCorsResourcePolicy
+      { Cors.corsRequestHeaders = Cors.simpleHeaders }
 
 server :: Processes -> Server API
 server processes = makeServer processes $

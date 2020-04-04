@@ -28,7 +28,7 @@ library
   other-modules:
     LineageFlow.Query.Imports
   build-depends:
-      base >=4.9 && <4.10
+      base
     , lineageflow-base
     , aeson
     , containers

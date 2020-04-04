@@ -1,7 +1,7 @@
 { mkDerivation, base, containers, lens, lineageflow-algorithm
 , lineageflow-derivatives, lineageflow-io-cbor, lineageflow-prelude
-, lineageflow-statistics, statistics, stdenv, storable-record
-, these
+, lineageflow-statistics, semialign, statistics, stdenv
+, storable-record, these
 }:
 mkDerivation {
   pname = "lineageflow-deviations";
@@ -11,7 +11,7 @@ mkDerivation {
   isExecutable = true;
   libraryHaskellDepends = [
     base containers lens lineageflow-derivatives lineageflow-prelude
-    lineageflow-statistics statistics storable-record these
+    lineageflow-statistics semialign statistics storable-record these
   ];
   executableHaskellDepends = [
     base containers lens lineageflow-algorithm lineageflow-derivatives

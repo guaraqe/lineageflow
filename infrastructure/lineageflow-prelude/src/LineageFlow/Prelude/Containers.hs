@@ -10,6 +10,7 @@ module LineageFlow.Prelude.Containers
     type (.:.)
   , composed
   , ixed
+  , forceCompose
   -- * List: indexed and unindexed
   , ListU
   , List
@@ -33,7 +34,7 @@ import qualified LineageFlow.BArrayU as BArrayU
 import Control.ConstraintClasses
 
 import Control.DeepSeq
-import Control.Lens (Lens)
+import Control.Lens (Lens, over)
 import Data.Functor.Compose
 
 --------------------------------------------------------------------------------
@@ -41,7 +42,8 @@ import Data.Functor.Compose
 infixr 7 .:.
 type (.:.) f g = Compose f g
 
-deriving instance NFData (f (g a)) => NFData (Compose f g a)
+forceCompose :: NFData (f (g a)) => Compose f g a -> Compose f g a
+forceCompose = over composed force
 
 composed :: Lens (Compose f g a) (Compose f1 g1 a1) (f (g a)) (f1 (g1 a1))
 composed f = \h -> fmap Compose (f . getCompose $ h)

@@ -46,7 +46,7 @@ executable lf-viewer
     -O2
 
   build-depends:
-    base >=4.9 && <4.10,
+    base,
     lineageflow-prelude,
     lineageflow-algorithm,
     lineageflow-triangulations,

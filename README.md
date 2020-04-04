@@ -34,8 +34,8 @@ curl https://nixos.org/nix/install | sh
 and by setting the following options in `/etc/nix/nix.conf`:
 
 ```
-binary-caches = https://cache.nixos.org https://nixcache.reflex-frp.org
-binary-cache-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=
+substituters = https://cache.nixos.org https://nixcache.reflex-frp.org
+trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=
 ```
 
 which enables the appropriated binary caches for Nix, which greatly reduces the installation time of the system.

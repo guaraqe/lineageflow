@@ -41,7 +41,6 @@ overM l f = do
   ioref <- ask
   liftIO $ modifyIORef' ioref (over l f)
 
--- Change to hoistServer later
 makeServer :: Processes -> ServerT API App -> Server API
-makeServer ps = enter $ NT $ \app -> do
+makeServer ps = hoistServer (Proxy :: Proxy API) $ \app -> do
   runReaderT (getApp app) ps

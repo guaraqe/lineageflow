@@ -148,10 +148,12 @@ instance Storable a => Storable (Weighted a) where
     peek = Store.peek store
     poke = Store.poke store
 
+instance Semigroup a => Semigroup (Weighted a) where
+  (<>) (Weighted w1 a1) (Weighted w2 a2) =
+    Weighted (w1 + w2) ((<>) a1 a2)
+
 instance Monoid a => Monoid (Weighted a) where
   mempty = Weighted 0 mempty
-  mappend (Weighted w1 a1) (Weighted w2 a2) =
-    Weighted (w1 + w2) (mappend a1 a2)
 
 deriving instance Storable a => Storable (Sum a)
 deriving instance Fractional a => Fractional (Sum a)

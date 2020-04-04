@@ -30,7 +30,7 @@ library
     LineageFlow.Statistics.Sample
 
   build-depends:
-    base >= 4.9 && <4.10,
+    base,
     lineageflow-prelude,
     lens,
     statistics

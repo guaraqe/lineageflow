@@ -30,7 +30,7 @@ executable lf-trajectories
     VectorPairPathIntegral
 
   build-depends:
-    base >=4.9 && <4.10,
+    base,
     lineageflow-prelude,
     lineageflow-algorithm,
     lineageflow-io-cbor,
@@ -75,7 +75,7 @@ library
     LineageFlow.Trajectories.PathIntegral
 
   build-depends:
-    base >=4.9 && <4.10,
+    base,
     lineageflow-prelude,
     deepseq,
     lens

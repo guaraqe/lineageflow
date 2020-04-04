@@ -37,7 +37,7 @@ library
   other-modules:
     LineageFlow.Base.Imports
   build-depends:
-    base >=4.9 && <4.10,
+    base,
     aeson,
     containers,
     lens,

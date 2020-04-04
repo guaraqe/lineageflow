@@ -1,4 +1,4 @@
-module SpaceGaussianVector
+module SpaceGaussianVectorSparse
   ( algorithm
   ) where
 

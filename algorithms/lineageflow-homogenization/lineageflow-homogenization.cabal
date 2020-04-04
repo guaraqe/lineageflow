@@ -42,7 +42,8 @@ executable lf-homogenization
     base,
     deepseq,
     LATS,
-    lens
+    lens,
+    vector
 
   hs-source-dirs:
     app,
@@ -77,7 +78,8 @@ library
     deepseq,
     LATS,
     containers,
-    lens
+    lens,
+    vector
 
   ghc-options:
     -O2

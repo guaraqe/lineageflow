@@ -3,7 +3,7 @@
 , lineageflow-database-sqlite, lineageflow-script
 , lineageflow-server-api, lineageflow-viewer-interface, markdown
 , mtl, process, random, servant, servant-server, stdenv, temporary
-, text, transformers, unix, wai, wai-extra, warp, yaml
+, text, transformers, unix, wai, wai-cors, wai-extra, warp, yaml
 }:
 mkDerivation {
   pname = "lineageflow-server";
@@ -16,9 +16,9 @@ mkDerivation {
     lineageflow-algorithm lineageflow-database-sqlite
     lineageflow-script lineageflow-server-api
     lineageflow-viewer-interface markdown mtl process random servant
-    servant-server temporary text transformers unix wai wai-extra warp
-    yaml
+    servant-server temporary text transformers unix wai wai-cors
+    wai-extra warp yaml
   ];
-  description = "Synopsis";
-  license = stdenv.lib.licenses.gpl3;
+  description = "A server for LineageFlow algorithms";
+  license = stdenv.lib.licenses.agpl3;
 }

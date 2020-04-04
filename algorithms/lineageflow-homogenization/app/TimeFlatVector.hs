@@ -1,4 +1,4 @@
-module TimeFlatTensor
+module TimeFlatVector
   ( algorithm
   ) where
 

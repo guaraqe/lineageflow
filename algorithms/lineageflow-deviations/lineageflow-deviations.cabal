@@ -36,6 +36,7 @@ library
     base,
     containers,
     lens,
+    semialign,
     statistics,
     storable-record,
     these
@@ -82,6 +83,7 @@ executable lf-deviations
     base,
     containers,
     lens,
+    semialign,
     statistics,
     storable-record,
     these

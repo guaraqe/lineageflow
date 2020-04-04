@@ -18,7 +18,7 @@ import LineageFlow.Homogenization.Types
 import LineageFlow.Linear
 import qualified LineageFlow.Linear.Raw as Matrix
 
-import qualified LATS.Vector.Mutable as MLinear
+import qualified Data.Vector.Generic.Mutable as MLinear
 import qualified LineageFlow.Linear.Raw as Linear
 
 --------------------------------------------------------------------------------

@@ -1,7 +1,4 @@
 let
-  pkgs = import <nixpkgs> {
-    overlays = [ (import ./nix/overlay.nix) ];
-  };
-  call = pkgs.haskellPackages.callPackage;
+  pkgs = import ./nix/nixpkgs.nix;
 in
-  import ./nix/lineageflow.nix call
+  import ./nix/lineageflow.nix pkgs.haskellPackages.callPackage

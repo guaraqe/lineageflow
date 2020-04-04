@@ -24,7 +24,7 @@ executable lf-server
   main-is:
     Main.hs
   build-depends:
-    base >=4.9 && <4.10,
+    base,
     lineageflow-algorithm,
     lineageflow-server-api,
     lineageflow-viewer-interface,
@@ -42,6 +42,7 @@ executable lf-server
     mtl,
     servant-server,
     wai,
+    wai-cors,
     wai-extra,
     warp,
     yaml,

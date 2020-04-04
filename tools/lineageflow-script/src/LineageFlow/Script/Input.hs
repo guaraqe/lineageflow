@@ -14,6 +14,7 @@ import qualified Data.Set as Set
 
 import Control.Lens
 import Data.Aeson.Types
+import Data.Semigroup
 import GHC.Generics (Generic)
 
 --------------------------------------------------------------------------------
@@ -33,10 +34,13 @@ instance FromJSON ScriptInput where
   parseJSON = genericParseJSON $
     defaultOptions { fieldLabelModifier = convertField }
 
+instance Semigroup ScriptInput where
+  ScriptInput v1 l1 <> ScriptInput v2 l2 =
+    ScriptInput (v1 <> v2) (l1 <> l2)
+
 instance Monoid ScriptInput where
   mempty = ScriptInput [] []
-  mappend (ScriptInput v1 l1) (ScriptInput v2 l2) =
-    ScriptInput (mappend v1 v2) (mappend l1 l2)
+  mappend = (<>)
 
 scriptStepInput :: ScriptStep -> ScriptInput
 scriptStepInput s = ScriptInput (scriptStepVars s) (scriptStepLoop s)
