@@ -42,8 +42,8 @@ which enables the appropriated binary caches for Nix, which greatly reduces the 
 Afterwards, build the server, algorithms and client:
 
 ```
-./make-server
-./make-client
+make server
+make client
 ```
 
 These can be deployed to a [virtual machine](virtual-machine) if desired.
@@ -56,20 +56,21 @@ An empty folder suffices and it can be populated with tracking data using [`lf-i
 The server can be launched from the terminal with:
 
 ```
-./run-server DATABASE_PATH
+export LINEAGEFLOW_DATABASE=some-path
+make run-server
 ```
 
 which will start a session, and log the requests received by the client.
 
-The graphical client can be launched in a separate terminal window with:
+The graphical client can be launched from a separate terminal window with:
 
 ```
-./run-client
+make run-client
 ```
 
 which will open a chromium window containing the app and a short tutorial.
 
-In order to enter a shell with all executables in the environment, simply:
+To enter a shell with all executables in the environment, simply type:
 
 ```
 nix-shell
