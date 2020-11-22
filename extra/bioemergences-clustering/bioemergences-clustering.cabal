@@ -1,0 +1,43 @@
+name:
+  bioemergences-clustering
+version:
+  0.1.0
+synopsis:
+  Clustering pipeline for BioEmergences.
+license:
+  AGPL-3
+author:
+  Juan Raphael Diaz Simões
+maintainer:
+  mail@guaraqe.gq
+build-type:
+  Simple
+cabal-version:
+  >= 1.10
+
+executable bioemergences-clustering
+  main-is:
+    Main.hs
+  hs-source-dirs:
+    app
+  default-extensions:
+    NoImplicitPrelude
+  ghc-options:
+    -O2
+    -Wall
+  build-depends:
+    lineageflow-prelude,
+    lineageflow-import,
+    lineageflow-export,
+    lineageflow-tracking,
+    lineageflow-derivatives,
+    lineageflow-homogenization,
+    lineageflow-triangulations,
+    lineageflow-trajectories,
+    lineageflow-clustering,
+    base,
+    bytestring,
+    containers,
+    optparse-applicative
+  default-language:
+    Haskell2010

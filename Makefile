@@ -27,6 +27,16 @@ run-client: ## Run the client
 
 .PHONY: run-client
 
+clustering-executable: ## Executable for clustering
+	nix-build release.nix -A bioemergences-clustering
+
+.PHONY: bioemergences-clustering
+
+clustering-docker: ## Build docker image for clustering
+	nix-build extra/bioemergences-clustering/docker.nix
+
+.PHONY: bioemergences-clustering-docker
+
 ################################################################################
 # Help
 

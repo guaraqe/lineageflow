@@ -16,7 +16,7 @@ mkDerivation {
   executableHaskellDepends = [
     base containers lens lineageflow-algorithm lineageflow-derivatives
     lineageflow-io-cbor lineageflow-prelude lineageflow-statistics
-    statistics storable-record these
+    semialign statistics storable-record these
   ];
   description = "Deviations of neighboring cell trajectories";
   license = stdenv.lib.licenses.agpl3;
