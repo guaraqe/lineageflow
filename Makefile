@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 
 ################################################################################
-# Server
+# Server and client
 
 all: server client ## Build the server and the client
 
@@ -27,15 +27,18 @@ run-client: ## Run the client
 
 .PHONY: run-client
 
+################################################################################
+# Clustering algorithm
+
 clustering-executable: ## Executable for clustering
 	nix-build release.nix -A bioemergences-clustering
 
-.PHONY: bioemergences-clustering
+.PHONY: clustering-executable
 
 clustering-docker: ## Build docker image for clustering
 	nix-build extra/bioemergences-clustering/docker.nix
 
-.PHONY: bioemergences-clustering-docker
+.PHONY: clustering-docker
 
 ################################################################################
 # Help
